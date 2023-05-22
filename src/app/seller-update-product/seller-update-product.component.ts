@@ -11,6 +11,7 @@ import { ProductService } from '../services/product.service';
 export class SellerUpdateProductComponent implements OnInit {
 
   productData: undefined | product
+  updateProductMessage: undefined | string
 
   constructor( private route: ActivatedRoute, private product: ProductService) { }
 
@@ -23,8 +24,19 @@ export class SellerUpdateProductComponent implements OnInit {
     })
   }
 
-  submit(data: any){
-
+  submit(data: product){
+    console.log(data)
+    if(this.productData){
+      data.id = this.productData.id
+    }
+    this.product.updateProduct(data).subscribe((result) => {
+      if(result){
+        this.updateProductMessage = 'Product is successfully updated'
+      }
+    })
+    setTimeout(() => {
+      this.updateProductMessage = undefined
+    }, 3000)
   }
 
 }

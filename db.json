@@ -22,10 +22,10 @@
   "products": [
     {
       "name": "iphone 14",
-      "price": "30000",
+      "price": "35000",
       "color": "black",
       "category": "Mobiles",
-      "description": "test",
+      "description": "iPhone Mobile",
       "image": "https://m.media-amazon.com/images/I/71yzJoE7WlL._AC_UF1000,1000_QL80_.jpg",
       "id": 1
     },
