@@ -1,0 +1,19 @@
+img{
+    width: 50%;
+}
+/* td{
+    width: 16%;
+} */
+p{
+    color: green;
+}
+i{
+    cursor: pointer;
+    margin-right: 1em;
+}
+.fa-trash{
+    color: #f23c3c;
+}
+.fa-pen-to-square{
+    color: #0b2468;
+}

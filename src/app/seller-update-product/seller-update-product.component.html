@@ -1,0 +1,49 @@
+<div>
+    <h4 class="mt-2">Update Product</h4>
+    <form #updateProduct="ngForm" class="d-flex flex-column align-items-center" (ngSubmit)="submit(updateProduct.value)">
+      <input
+        class="form-control mb-2 w-50"
+        type="text"
+        placeholder="Enter Product Name"
+        name="name"
+        ngModel="{{productData?.name}}"
+      />
+      <input
+        class="form-control mb-2 w-50"
+        type="text"
+        placeholder="Enter Product Price"
+        name="price"
+        ngModel="{{productData?.price}}"
+      />
+      <input
+        class="form-control mb-2 w-50"
+        type="text"
+        placeholder="Enter Product Color"
+        name="color"
+        ngModel="{{productData?.color}}"
+      />
+      <input
+        class="form-control mb-2 w-50"
+        type="text"
+        placeholder="Enter Product Category"
+        name="category"
+        ngModel="{{productData?.category}}"
+      />
+      <textarea
+        class="form-control w-50 mb-2"
+        placeholder="Enter Product Description"
+        name="description"
+        rows="3"
+        ngModel="{{productData?.description}}"
+      ></textarea>
+      <input
+      class="form-control mb-2 w-50"
+      type="text"
+      placeholder="Enter Product Image URL"
+      name="image"
+      ngModel="{{productData?.image}}"
+    />
+    <button class="btn btn-primary my-3">Update Product</button>
+    </form>
+  </div>
+  
