@@ -46,6 +46,65 @@
       "description": "Samsung Mobile",
       "image": "https://cdn.shopify.com/s/files/1/0684/6332/9568/products/Galaxy23Ultra5GEgypt-3.png?v=1675970129",
       "id": 3
+    },
+    {
+      "name": "Samsung Galaxy M31",
+      "price": "9000",
+      "color": "Blue",
+      "category": "Mobiles",
+      "description": "Samsung Mobile",
+      "image": "https://specificationsplus.com/wp-content/uploads/2019/12/Samsung-Galaxy-M31.jpg",
+      "id": 4
+    },
+    {
+      "name": "HP Pavilion ",
+      "price": "200000",
+      "color": "Gray",
+      "category": "Laptops",
+      "description": "HP Laptop",
+      "image": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c06731705.png",
+      "id": 5
+    },
+    {
+      "name": "Dell Vostro",
+      "price": "28000",
+      "color": "Gray",
+      "category": "Laptops",
+      "description": "Dell Laptop",
+      "image": "https://i.dell.com/is/image/DellContent//content/dam/ss2/product-images/dell-client-products/notebooks/vostro-notebooks/vostro-3500/pdp/128-vostro-bulleye-tgl-notebook-vostro-15-3500-5000x5000.jpg",
+      "id": 6
+    },
+    {
+      "name": "Skechers Slip-ins",
+      "price": "3000",
+      "color": "purble",
+      "category": "Shoes",
+      "description": "Skechers",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdeLG6QwdKErXQm9BJCjybeaVcfXmuzWgJLA&usqp=CAU",
+      "id": 7
+    },
+    {
+      "name": "Skechers Arch Fit",
+      "price": "2500",
+      "color": "brown",
+      "category": "Shoes",
+      "description": "Skechers",
+      "image": "https://www.skechers.fr/dw/image/v2/BDCN_PRD/on/demandware.static/-/Sites-skechers-master/default/dw98457640/images/large/232040_TPE.jpg?sw=800",
+      "id": 8
+    }
+  ],
+  "users": [
+    {
+      "name": "ola",
+      "email": "ola@gmail.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "name": "ahmed",
+      "email": "ahmed@gmail.com",
+      "password": "123456",
+      "id": 2
     }
   ]
 }

@@ -1,3 +1,19 @@
 .navbar-brand{
     color: blueviolet;
 }
+.suggested-result{
+    position: absolute;
+    z-index: 10;
+    background-color: #F8F9FA;
+    width: 300px;
+    top: 47px;
+    border-radius: 5px;
+}
+.suggested-result li{
+    padding: 5px;
+    list-style: none;
+}
+.suggested-result li a{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.55);
+}

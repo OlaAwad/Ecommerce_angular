@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
     <div class="container">
         <a class="navbar-brand" routerLink="/">E-commerce</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
               <a class="nav-link" routerLink="/">Home</a>
             </li>           
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" routerLink="/user-auth">Login/SignUp</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Cart(0)</a>
@@ -38,8 +38,13 @@
           </ul>
          </div>
           <form class="form-inline my-2 my-lg-0 d-flex" *ngIf="menuType==='default'">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input #searchInput class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" (keyup)="searchProduct($event)" (blur)="hideSearch()">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="submitSearch(searchInput.value)">Search</button>
+            <ul class="suggested-result" *ngIf="searchResult">
+              <li *ngFor="let item of searchResult">
+                <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a>
+              </li>
+            </ul>
           </form>
         </div>
     </div>

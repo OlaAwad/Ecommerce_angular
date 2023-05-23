@@ -18,7 +18,8 @@ export class SellerAddProductComponent implements OnInit {
 
   submit(data: product){
     this.product.addProduct(data).subscribe((result) => {
-      console.log(result)
+      console.log('data: ', data)
+      console.log('result: ', result)
       if(result){
         this.addProductMessage = 'Product is successfully added'
       }
