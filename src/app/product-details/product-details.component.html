@@ -14,7 +14,8 @@
         <h6>Category: {{productData.category}}</h6>
         <h6>Category: {{productData.description}}</h6>
         <br>
-        <button class="btn btn-primary me-2">Add to Cart</button>
+        <button class="btn btn-primary me-2" (click)="addToCart()" *ngIf="!removeCart">Add to Cart</button>
+        <button class="btn btn-primary me-2" (click)="removeFromCart(productData.id)" *ngIf="removeCart">Remove from Cart</button>
         <button class="btn btn-primary">Buy Now</button>
         <div class="quantity-group mt-3">
             <button class="btn btn-sm btn-primary" (click)="handleQuantity('min')">-</button>

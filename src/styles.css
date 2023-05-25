@@ -1,3 +1,10 @@
 body{
     font-family: sans-serif;
 }
+.invalid-input{
+    color: red;
+    font-size: 12px;
+}
+.error-p{
+    color: red;
+}

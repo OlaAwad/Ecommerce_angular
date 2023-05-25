@@ -18,7 +18,25 @@
               <a class="nav-link" routerLink="/user-auth">Login/SignUp</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Cart(0)</a>
+                <a class="nav-link" href="#">Cart({{cartItems}})</a>
+            </li>
+          </ul>
+
+          <ul *ngSwitchCase="'user'" class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/seller-auth">Seller</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/">Home</a>
+            </li>  
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user-auth">{{userName | titlecase}}</a>
+            </li>         
+            <li class="nav-item">
+              <a class="nav-link" (click)="userLogout()">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cart({{cartItems}})</a>
             </li>
           </ul>
 

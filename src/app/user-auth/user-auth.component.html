@@ -1,31 +1,76 @@
 <div class="user-auth">
-  <h4 class="text-center">User Signup</h4>
-  <form
-    #userSignUp="ngForm"
-    (ngSubmit)="signUp(userSignUp.value)"
-    class="d-flex flex-column align-items-center"
-  >
-    <input
-      type="text"
-      class="form-control w-50 mb-2"
-      name="name"
-      placeholder="Enter your name"
-      ngModel
-    />
-    <input
-      type="text"
-      class="form-control w-50 mb-2"
-      name="email"
-      placeholder="Enter your email"
-      ngModel
-    />
-    <input
-      type="password"
-      class="form-control w-50 mb-2"
-      name="password"
-      placeholder="Enter your password"
-      ngModel
-    />
-    <button class="btn btn-primary my-3">Signup</button>
-  </form>
+  <div class="user-signup" *ngIf="!showLogin">
+    <h4 class="text-center">User Signup</h4>
+    <form
+      #userSignUp="ngForm"
+      (ngSubmit)="signUp(userSignUp.value)"
+      class="d-flex flex-column align-items-center"
+    >
+      <input
+        type="text"
+        class="form-control w-50 mb-2"
+        name="name"
+        placeholder="Enter your name"
+        ngModel
+      />
+      <input
+        type="text"
+        class="form-control w-50 mb-2"
+        name="email"
+        placeholder="Enter your email"
+        ngModel
+      />
+      <input
+        type="password"
+        class="form-control w-50 mb-2"
+        name="password"
+        placeholder="Enter your password"
+        ngModel
+      />
+      <button class="btn btn-primary my-3">Signup</button>
+      <Span >
+        Already have account?
+        <a class="auth-toggle-link" (click)="openLogin()">Click here to Login</a>
+      </Span>
+    </form>
+  </div>
+  <div class="user-login" *ngIf="showLogin">
+    <h4 class="text-center">User Login</h4>
+    <form
+      #userLogin="ngForm"
+      (ngSubmit)="login(userLogin.value)"
+      class="d-flex flex-column align-items-center"
+    >
+    <p class="error-p">{{authError}}</p>
+      <input
+        type="text"
+        class="form-control w-50 mb-2"
+        name="email"
+        placeholder="Enter your email"
+        ngModel
+        required
+        #email="ngModel"
+        email
+      />
+      <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Please Enter a Valid Value</span></p>
+      <input
+        type="password"
+        class="form-control w-50 mb-2"
+        name="password"
+        placeholder="Enter your password"
+        ngModel
+        required
+        #password="ngModel"
+        minlength="4"
+        maxlength="20"
+      />
+      <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Please Enter a Valid Value</span></p>
+      <button class="btn btn-primary my-3" [disabled]="userLogin.invalid">Login</button>
+      <Span >
+        Want to create account?
+        <a class="auth-toggle-link" (click)="openSignup()">Click here to Signup</a>
+      </Span>
+    </form>
+  </div>
+  
 </div>
