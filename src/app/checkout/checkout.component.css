@@ -1,0 +1,16 @@
+h3{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.checkout h4{
+    /* margin-top: 15px; */
+    margin-bottom: 15px;
+}
+/* .shipping-address .order{
+    align-self: center;
+} */
+.orderMsg{
+    text-align: center;
+    color: green;
+}
