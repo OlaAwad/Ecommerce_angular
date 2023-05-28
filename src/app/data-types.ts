@@ -47,3 +47,8 @@ export interface order{
     userId: string,
     id: number | undefined
 }
+export interface categories{
+    name: string,
+    id?: number,
+    image: string
+}

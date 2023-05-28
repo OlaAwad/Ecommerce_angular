@@ -1,37 +1,40 @@
-<div class="checkout">
-  <h3>Checkout</h3>
-  <p class="orderMsg">{{orderMsg}}</p>
-  <div class="row">
-    <div class="col-sm-7 shipping-address">
-      <h4>Add Shipping Address</h4>
-      <form #orderData="ngForm" class="d-flex flex-column align-items-start" (ngSubmit)="orderNow(orderData.value)">
-        <input
+<div class="container">
+  <div class="checkout">
+    <h3>Checkout</h3>
+    <p class="orderMsg">{{orderMsg}}</p>
+    <div class="row">
+      <div class="col-sm-7 shipping-address">
+        <h4>Add Shipping Address</h4>
+        <form #orderData="ngForm" class="d-flex flex-column align-items-start" (ngSubmit)="orderNow(orderData.value)">
+          <input
+            type="text"
+            class="form-control w-75 mb-2"
+            name="email"
+            placeholder="Enter your email"
+            ngModel
+          />
+          <input
+            type="text"
+            class="form-control w-75 mb-2"
+            name="address"
+            placeholder="Enter your address"
+            ngModel
+          />
+          <input
           type="text"
           class="form-control w-75 mb-2"
-          name="email"
-          placeholder="Enter your email"
+          name="contact"
+          placeholder="Enter contact details"
           ngModel
         />
-        <input
-          type="text"
-          class="form-control w-75 mb-2"
-          name="address"
-          placeholder="Enter your address"
-          ngModel
-        />
-        <input
-        type="text"
-        class="form-control w-75 mb-2"
-        name="contact"
-        placeholder="Enter contact details"
-        ngModel
-      />
-      <button class="btn btn-sm btn-primary order mt-2 w-75">Order Now</button>
-      </form>
-    </div>
-    <div class="col-sm-5">
-        <h4>Total Amount: {{totalPrice}}</h4>
-        <h5>Payment Method: <b>Pay on Delivery</b></h5>
+        <button class="btn btn-sm btn-primary order mt-2 w-75">Order Now</button>
+        </form>
+      </div>
+      <div class="col-sm-5">
+          <h4>Total Amount: {{totalPrice}}</h4>
+          <h5>Payment Method: <b>Pay on Delivery</b></h5>
+      </div>
     </div>
   </div>
+  
 </div>

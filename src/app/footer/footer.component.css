@@ -1,0 +1,22 @@
+.footer{
+    background-color: var(--mainColor);
+    color: var(--white);
+    width: 100%;
+}
+p{
+    font-size: 0.9em;
+    color: var(--gray);
+    cursor: pointer;
+}
+.brand{
+    font-family: 'Righteous', cursive;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--white);
+}
+.copyright{
+    cursor: auto;
+}
+.links{
+    font-weight: bold;
+}

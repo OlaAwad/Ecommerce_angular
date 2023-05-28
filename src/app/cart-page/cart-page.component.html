@@ -1,47 +1,49 @@
-<div class="cart-page">
-    <h3>Cart Page</h3>
-    <p class="p-message"  class="text-center">{{emptyMsg}}</p>
-    <div class="row">
-        <div class="col-sm-8 details">
-            <ul *ngFor="let cart of cartData">
-                <li>
-                    <img src="{{cart.image}}" alt="">
-                </li>
-                <li>
-                    <span> {{cart.name}}</span>
-                </li>
-                <li>
-                    <span>Price: <br> {{cart.price}}</span>
-                </li>
-                <li>
-                    <span>Quantity: <br> {{cart.quantity}}</span>
-                </li>
-                <li>
-                    <button class="btn btn-sm btn-primary" (click)="removeFromCart(cart.id)">Remove from Cart</button>
-                </li>
-            </ul>
-        </div>
-        <div class="col-sm-4 summary">
-            <h4>Summary </h4>
-            <ul>
-                <li>
-                    <span>Amount: </span> <span>{{priceSummary.price}}</span>
-                </li>
-                <li>
-                    <span>Tax: </span> <span>{{priceSummary.tax}}</span>
-                </li>
-                <li>
-                    <span>Delivery Fees: </span> <span>{{priceSummary.delivery}}</span>
-                </li>
-                <li>
-                    <span>Discount: </span> <span>{{priceSummary.discount}}</span>
-                </li>
-                <li class="line"></li>
-                <li>
-                    <span><h5>Total: </h5></span> <span><h5>{{priceSummary.total}}</h5></span>
-                </li>
-                <button class="btn btn-sm btn-primary w-100 mt-2" (click)="checkout()">Checkout</button>
-            </ul>
+<div class="container">
+    <div class="cart-page">
+        <h3>Cart Page</h3>
+        <p class="p-message"  class="text-center">{{emptyMsg}}</p>
+        <div class="row">
+            <div class="col-sm-8 details">
+                <ul *ngFor="let cart of cartData">
+                    <li>
+                        <img src="{{cart.image}}" alt="">
+                    </li>
+                    <li>
+                        <span> {{cart.name}}</span>
+                    </li>
+                    <li>
+                        <span>Price: <br> {{cart.price}}</span>
+                    </li>
+                    <li>
+                        <span>Quantity: <br> {{cart.quantity}}</span>
+                    </li>
+                    <li>
+                        <button class="btn btn-sm btn-primary" (click)="removeFromCart(cart.id)">Remove from Cart</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4 summary">
+                <h4>Summary </h4>
+                <ul>
+                    <li>
+                        <span>Amount: </span> <span>{{priceSummary.price}}</span>
+                    </li>
+                    <li>
+                        <span>Tax: </span> <span>{{priceSummary.tax}}</span>
+                    </li>
+                    <li>
+                        <span>Delivery Fees: </span> <span>{{priceSummary.delivery}}</span>
+                    </li>
+                    <li>
+                        <span>Discount: </span> <span>{{priceSummary.discount}}</span>
+                    </li>
+                    <li class="line"></li>
+                    <li>
+                        <span><h5>Total: </h5></span> <span><h5>{{priceSummary.total}}</h5></span>
+                    </li>
+                    <button class="btn btn-sm btn-primary w-100 mt-2" (click)="checkout()">Checkout</button>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

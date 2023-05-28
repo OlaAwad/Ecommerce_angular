@@ -1,38 +1,194 @@
-.product-header-img{
-    object-fit: contain;
-    height: 600px;
+.product-header-img {
+  object-fit: contain;
+  height: 500px;
+  width: 100%;
+  cursor: pointer;
+}
+.carousel-caption {
+  /* background-color: #00000082; */
+  background-color: var(--mainBgColor);
+  opacity: 0.5;
+  border-radius: 5px;
+  color: black;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: black !important;
+  border-radius: 5px;
+}
+.product-list-wrapper {
+  margin-top: 5em;
+}
+.card {
+  height: 25rem;
+}
+.card img {
+  height: 200px;
+}
+.card-title {
+  font-weight: bold;
+}
+.card .product-details {
+  height: 60px;
+}
+.product-details p {
+  font-size: 0.9em;
+}
+.card .action {
+  text-decoration: none;
+  font-size: 0.9em;
+  color: #102177;
+  /* font-weight: bold; */
+}
+
+.cat-row .category {
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+.cat-row .category img {
+  height: 250px;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+.cat-row .category img:hover {
+  transform: scale(1.1);
+}
+.cat-row .category-caption {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--mainBgColor);
+  padding: 0.5em;
+  opacity: 0.7;
+  border-radius: 1em;
+  font-weight: bold;
+  color: var(--link);
+}
+
+/* .cat-row{
+    margin-top: 20px;
+    margin-bottom: 30px;
+} */
+.card-test {
+  overflow: hidden;
+  position: relative;
+  width: 200px;
+  margin-top: 2em;
+  border-radius: 8px;
+  text-align: center;
+  transition: 0.3s cubic-bezier(0.6, 0.4, 0, 1), transform 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
+}
+.card-test .image-part{
+    position: relative;
+}
+.card-test .product {
+  position: relative;
+}
+
+.card-test .image-part a img {
+  position: relative;
+  transition: 0.2s;
+  width: 201px !important;
+  height: 250px;
+}
+.card-test .card-buttons {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-weight: bold;
+  top: 100%;
+  transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
+}
+.card-test .image-part:hover .card-buttons{
+    position: absolute;
+    top: 0%;
+    font-size: 1.2em;
+    flex-direction: column;
+}
+.card-test .card-btn {
+  width: 55%;
+  opacity: 0.8;
+  padding: 8px;
+  text-align: center;
+  background-color: var(--mainBgColor);
+  font-size: 0.7em;
+  border-radius: 8px;
+  color: var(--link);
+}
+.card-test .image-part .category{
+    position: absolute;
     width: 100%;
-    cursor: pointer;
-}
-.carousel-caption{
-    background-color: #00000082;
-    border-radius: 5px;
-}
-.carousel-control-next-icon, .carousel-control-prev-icon{
-    background-color: black !important;
-    border-radius: 5px;
-}
-.product-list-wrapper{
-    margin-top: 5em;
-}
-.card{
-    height: 25rem;
-}
-.card img{
-    height: 200px;
-}
-.card-title{
+    top: 83%;
+    left: 0%;
+    opacity: 0.9;
+    background-color: var(--link);
+    opacity: 0.4;
+    color: var(--white);
     font-weight: bold;
 }
-.card .product-details{
-    height: 60px;
+.card-test .detail-part{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    height: 100%;
+    background-color: var(--white) ;
+    width: 100%;
 }
-.product-details p{
+.card-test .detail-part-top, .detail-part-bottom{
+    height: 100%;
+    font-weight: 600;
+  text-align: left;
+}
+.card-test .detail-part-top{
+    color: var(--gray);
+}
+.card-test .detail-part-bottom{
+    color: var(--link);
     font-size: 0.9em;
 }
-.card .action{
-    text-decoration: none;
-    font-size: 0.9em;
-    color: #102177;
-    /* font-weight: bold; */
+/* End Trendy Products */
+/* Start About */
+.about{
+    background-color: white;
+    width: 100%;
 }
+.about h2{
+    padding: 0 0 0 2em;
+}
+.about .line{
+    margin-left: 3.5em ;
+    width: 15%;
+}
+.about .about-text{
+    padding-left: 3.5em;
+}
+.about .about-img{
+    width: 80%;
+    height: 80%;
+    margin-left: 2em;
+}
+/* End About */
+/* Start Contact */
+.contact .email{
+    color: var(--link);
+}
+.contact .submit{
+    background-color: var(--mainColor);
+    color: var(--white);
+}
+/* End Contact */
