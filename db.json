@@ -151,22 +151,10 @@
       "category": "Laptops",
       "description": "Dell Laptop",
       "image": "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=883&q=80",
-      "quantity": 4,
-      "userId": 1,
-      "productId": 2,
-      "id": 9
-    },
-    {
-      "name": "Samsung Galaxy S21",
-      "price": "42000",
-      "color": "Black",
-      "category": "Mobiles",
-      "description": "Samsung Mobile",
-      "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
       "quantity": 1,
+      "productId": 2,
       "userId": 1,
-      "productId": 3,
-      "id": 10
+      "id": 9
     }
   ],
   "orders": [
@@ -201,14 +189,6 @@
       "totalPrice": 161100,
       "userId": 1,
       "id": 5
-    },
-    {
-      "email": "ola.khireldin@gmail.com",
-      "address": "Elsheikh Zayed",
-      "contact": "01140541467",
-      "totalPrice": 122100,
-      "userId": 1,
-      "id": 6
     }
   ]
 }
