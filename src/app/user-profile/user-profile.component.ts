@@ -47,41 +47,10 @@ export class UserProfileComponent implements OnInit {
     this.userService.sendUserInfo(data)
   }
 
-  // addAddress(){
-  //   this.addNewAddress = true
-  // }
+ 
 
-  // addAddresses(addresses: any){
-  //   this.defaultAddress = addresses.defaultAddress
-  //   this.secondAddress = addresses.secondAddress
-  //   this.userService.updateUserInfo(addresses).subscribe((result) => {
-  //     // localStorage.setItem('user', JSON.stringify(result))
-  //     this.mergeLocalStorage(result)
-  //   })
-  // }
 
-  // mergeLocalStorage(obj: any){
-  //   let user = localStorage.getItem('user')
-  //   let userId = user && JSON.parse(user).id
-  //   let newObj = user && JSON.parse(user)
-  //   for(var k in obj){
-  //     newObj[k] = obj[k]
-  //   }
-  //   localStorage.setItem('user', JSON.stringify(newObj))
-  //   // return newObj
-  //   console.log('newObj: ', newObj)
-  //   return this.http.put<user>(`http://localhost:3000/users/${userId}`, newObj)
-  // }
-
-  // mergeDatainDB(userInfo: any, addresses: any){
-  //   let user = localStorage.getItem('user')
-  //   let userId = user && JSON.parse(user).id
-  //   let newObj = user && JSON.parse(user)
-  //   for (let i in userInfo){
-  //     newObj[i] = userInfo[i]
-  //   }
-  //   return
-  // }
+  
   
 
 }

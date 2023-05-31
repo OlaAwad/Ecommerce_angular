@@ -28,7 +28,7 @@
       "availableQuantity": "7",
       "description": "iPhone Mobile",
       "image": "https://images.unsplash.com/photo-1615494488092-b13b68fe0eb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-      "details": "",
+      "details": "<h5>Mobile</h5>",
       "id": 1
     },
     {
@@ -148,9 +148,9 @@
     {
       "name": "Ola Awad",
       "email": "ola@gmail.com",
-      "mobile": "01140566666",
-      "defaultAddress": "Giza",
-      "secondAddress": "",
+      "mobile": "01140541467",
+      "defaultAddress": "Elsheikh Zayed",
+      "secondAddress": "6th of October",
       "id": 1
     },
     {
@@ -208,20 +208,6 @@
       "userId": 3,
       "productId": 1,
       "id": 9
-    },
-    {
-      "name": "iphone 14",
-      "price": "35000",
-      "color": "Black",
-      "category": "Mobiles",
-      "availableQuantity": "7",
-      "description": "iPhone Mobile",
-      "image": "https://images.unsplash.com/photo-1615494488092-b13b68fe0eb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-      "details": "",
-      "quantity": 1,
-      "userId": 1,
-      "productId": 1,
-      "id": 10
     }
   ],
   "orders": [
@@ -264,6 +250,14 @@
       "totalPrice": 35100,
       "userId": 1,
       "id": 8
+    },
+    {
+      "email": "ola.khireldin@gmail.com",
+      "address": "Elsheikh Zayed",
+      "contact": "01140541467",
+      "totalPrice": 70100,
+      "userId": 1,
+      "id": 9
     }
   ],
   "prdImages": []
