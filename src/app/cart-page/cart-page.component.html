@@ -18,7 +18,7 @@
                         <span>Quantity: <br> {{cart.quantity}}</span>
                     </li>
                     <li>
-                        <button class="btn btn-sm btn-primary" (click)="removeFromCart(cart.id)">Remove from Cart</button>
+                        <button class="btn btn-sm action-btn" (click)="removeFromCart(cart.id)">Remove from Cart</button>
                     </li>
                 </ul>
             </div>
@@ -41,7 +41,7 @@
                     <li>
                         <span><h5>Total: </h5></span> <span><h5>{{priceSummary.total}}</h5></span>
                     </li>
-                    <button class="btn btn-sm btn-primary w-100 mt-2" (click)="checkout()">Checkout</button>
+                    <button class="btn btn-sm action-btn w-100 mt-2" (click)="checkout()" [disabled]="checkoutDisabled">Checkout</button>
                 </ul>
             </div>
         </div>

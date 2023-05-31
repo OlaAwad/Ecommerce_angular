@@ -34,7 +34,7 @@ export class ProductDetailsComponent implements OnInit {
           let items = JSON.parse(cartData)
           items = items.filter(
             (item: product) => {
-              productId == item.id.toString()
+              productId == item.id?.toString()
               console.log('productId: ', productId)
             }
             
@@ -52,8 +52,11 @@ export class ProductDetailsComponent implements OnInit {
           this.product.cartData.subscribe((result) => {
             let item = result.filter(
               (item: product) =>
-                productId?.toString() === item.productId?.toString(),
+                productId?.toString() === item.id?.toString(),
+                // productId?.toString() === item.productId?.toString(),
             )
+            // console.log('productId: ', productId)
+            // console.log('item: ', item)
             if (item.length) {
               this.cartData = item[0]
               this.removeCart = true

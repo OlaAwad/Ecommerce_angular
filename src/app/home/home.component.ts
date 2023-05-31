@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { categories, product } from '../data-types';
 import { ProductService } from '../services/product.service';
 import * as Aos from 'aos';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,10 @@ export class HomeComponent implements OnInit {
   popularProducts: undefined | product[]
   trendyProducts: undefined | product[]
   categories: undefined | categories[]
+  categoryResult: undefined | product[]
 
 
-  constructor(private product: ProductService) { }
+  constructor(private product: ProductService, private router: Router) { }
 
   ngOnInit(): void {
     this.product.popularProducts().subscribe((data) => {
@@ -32,6 +34,19 @@ export class HomeComponent implements OnInit {
     Aos.init();
 
    
+  }
+
+  displayCatProducts(val: string){
+    console.log(val)
+    this.product.categoryProducts(val).subscribe((result) => {
+      this.categoryResult = result
+      this.sendCategoryProducts(this.categoryResult)
+    })
+    this.router.navigate([`category-products/${val}`])
+  }
+
+  sendCategoryProducts(data:product[]){
+    this.product.sendCategoryProducts(data)
   }
 
 }

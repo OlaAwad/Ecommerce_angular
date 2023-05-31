@@ -4,30 +4,30 @@
     <p class="orderMsg">{{orderMsg}}</p>
     <div class="row">
       <div class="col-sm-7 shipping-address">
-        <h4>Add Shipping Address</h4>
+        <h4>Add Shipping Details</h4>
         <form #orderData="ngForm" class="d-flex flex-column align-items-start" (ngSubmit)="orderNow(orderData.value)">
           <input
             type="text"
             class="form-control w-75 mb-2"
             name="email"
             placeholder="Enter your email"
-            ngModel
+            ngModel="{{userEmail}}"
           />
           <input
             type="text"
             class="form-control w-75 mb-2"
             name="address"
             placeholder="Enter your address"
-            ngModel
+            ngModel="{{userAddress}}"
           />
           <input
           type="text"
           class="form-control w-75 mb-2"
           name="contact"
           placeholder="Enter contact details"
-          ngModel
+          ngModel="{{userContact}}"
         />
-        <button class="btn btn-sm btn-primary order mt-2 w-75">Order Now</button>
+        <button class="btn btn-sm action-btn order mt-2 w-75">Order Now</button>
         </form>
       </div>
       <div class="col-sm-5">

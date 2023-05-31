@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
 
   getSearchResult(){
     this.product.searResult.subscribe((res) => {
-      console.log('res: ', res)
+      // console.log('res: ', res)
       this.products = res
     })
   }

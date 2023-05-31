@@ -31,6 +31,13 @@
         name="category"
         ngModel
       />
+      <input
+      class="form-control mb-2 w-50"
+      type="text"
+      placeholder="Enter Product Quantity"
+      name="availableQuantity"
+      ngModel
+    />
       <textarea
         class="form-control w-50 mb-2"
         placeholder="Enter Product Description"
@@ -45,7 +52,29 @@
       name="image"
       ngModel
     />
-    <button class="btn btn-primary my-3">Add Product</button>
+    <!-- <input
+      class="form-control mb-2 w-50"
+      type="text"
+      placeholder="Enter Product Image URL"
+      name="images[0]"
+      ngModel
+    />
+    <input
+      class="form-control mb-2 w-50"
+      type="text"
+      placeholder="Enter Product Image URL"
+      name="images[1]"
+      ngModel
+    /> -->
+    <input
+      class="form-control mb-2 w-50"
+      type="text"
+      placeholder="Enter Product Details"
+      name="details"
+      ngModel
+      [innerHTML]="details"
+    />
+    <button class="btn action-btn my-3">Add Product</button>
     </form>
   </div>
   

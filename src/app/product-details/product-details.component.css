@@ -30,7 +30,3 @@ h2, h4, h5, h6{
     width: 100px;
     text-align: center;
 }
-.btn{
-    background-color: var(--mainColor);
-    color: var(--gray);
-}

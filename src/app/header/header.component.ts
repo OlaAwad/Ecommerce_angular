@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { product } from '../data-types'
 import { ProductService } from '../services/product.service'
+import { UserService } from '../services/user.service'
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
   userName: string = ''
   cartItems = 0
 
-  constructor(private router: Router, private product: ProductService) {}
+  constructor(private router: Router, private product: ProductService, private userService: UserService) {}
 
   ngOnInit(): void {
     this.router.events.subscribe((val: any) => {
@@ -27,17 +28,19 @@ export class HeaderComponent implements OnInit {
           let sellerStore = localStorage.getItem('seller')
           let sellerData = sellerStore && JSON.parse(sellerStore)[0]
           this.sellerName = sellerData.name
-          console.log('name: ', this.sellerName)
+          // console.log('name: ', this.sellerName)
         } else if (localStorage.getItem('user')) {
           let userStore = localStorage.getItem('user')
           let userData = userStore && JSON.parse(userStore)
           // console.log('userdata: ', userData)
-          this.userName = userData.name
+          // this.userName = userData.name
+          this.userName = this.getUserName()
           this.menuType = 'user'
           this.product.getCartList(userData.id)
         } else {
           // console.log('outside seller area')
           this.menuType = 'default'
+          // this.product.getCartList(null)
         }
       }
     })
@@ -86,7 +89,7 @@ export class HeaderComponent implements OnInit {
   }
 
   submitSearch(val: string) {
-    console.log(val)
+    // console.log(val)
     this.router.navigate([`search/${val}`])
   }
 
@@ -95,11 +98,18 @@ export class HeaderComponent implements OnInit {
   }
 
   redirectToDetails(id: number) {
-    console.log(id)
+    // console.log(id)
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false
     }
     this.router.onSameUrlNavigation = 'reload'
     this.router.navigate([`/details/${id}`])
+  }
+
+  getUserName(){
+    this.userService.info.subscribe((res) =>{
+      this.userName = res.name
+    })
+    return this.userName
   }
 }

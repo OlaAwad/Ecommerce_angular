@@ -15,18 +15,18 @@
   </ng-template>
 </ngb-carousel>
 <!-- Start Categories -->
-<!-- <div class="categories mt-5 text-center container">
-  <h4>{{ 'Hot Categories' | uppercase }}</h4>
+<div class="categories mt-5 text-center container">
+  <h4>{{ 'Categories' | uppercase }}</h4>
   <div class="line"></div>
   <div class="row justify-content-around cat-row">
-    <div class="col-md-3 col-sm-6 category" *ngFor="let category of categories">
+    <div class="col-md-3 col-sm-6 category"  *ngFor="let category of categories" (click)="displayCatProducts(category.name)">
       <img src="{{ category.image }}" alt="" class="w-100" />
       <div class="category-caption">
         {{ category.name }}
       </div>
     </div>
   </div>
-</div> -->
+</div>
 <!-- End Categories -->
 
 <!-- Start Trendy Products -->
@@ -34,7 +34,10 @@
   <h4 class="text-center">{{ 'Trendy Products' | uppercase }}</h4>
   <div class="line"></div>
   <div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-12 mb-3" *ngFor="let item of trendyProducts">
+    <div
+      class="col-lg-3 col-md-4 col-sm-12 mb-3"
+      *ngFor="let item of trendyProducts"
+    >
       <div class="card-test">
         <div class="image-part">
           <div class="product">
@@ -43,7 +46,9 @@
             </a>
           </div>
           <div class="card-buttons">
-            <div class="card-btn mb-2" routerLink="/details/{{ item.id }}">View Details</div>
+            <div class="card-btn mb-2" routerLink="/details/{{ item.id }}">
+              View Details
+            </div>
             <!-- <div class="card-btn">Add To Cart</div> -->
           </div>
           <div class="category py-2">
@@ -85,7 +90,11 @@
 <!-- End Trendy Products -->
 
 <!-- Start About -->
-<div class="about mt-5 py-5 container" data-aos="fade-up" data-aos-duration="1000">
+<div
+  class="about mt-5 py-5 container"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+>
   <div class="row">
     <div class="col-sm-6">
       <h2>{{ 'About' | uppercase }}</h2>
@@ -117,43 +126,68 @@
 
 <!-- Start contact -->
 <div class="contact mt-5 container">
-	<h4 class="text-center">{{ 'Contact' | uppercase }}</h4>
-	<div class="line"></div>
-	<div class="row">
-		<div class="col-sm-6 text-center">
-			<div class="address">
-				Giza Governorate, Egypt
-			</div>
-			<div class="email">
-				<i class="fa-regular fa-envelope"></i>
-				<span class="ms-2">ola.khireldin@gmail.com</span>
-			</div>
-		</div>
-		<div class="col-sm-6">
-			<form #contact="ngForm" (ngSubmit)="contact.value">
-				<div class="row">
-					<div class="col-sm-6">
-						<input type="text" placeholder="Name" class="form-control mb-2" name="name" ngModel>
-					</div>
-					<div class="col-sm-6">
-						<input type="text" placeholder="Phone" class="form-control mb-2" name="phone" ngModel>
-					</div>
-				</div>
-				<div class="row">
-					<div>
-						<input type="email" placeholder="Email address" class="form-control mb-2" name="email" ngModel>
-					</div>
-				</div>
-				<div class="row">
-					<div>
-						<textarea class="form-control mb-2" placeholder="Message" id="exampleFormControlTextarea1" rows="3" ></textarea>
-					</div>
-				</div>
-				<div>
-					<button class="btn btn-sm submit w-100">{{'Contact Us' | uppercase}}</button>
-				</div>
-			</form>
-		</div>
-	</div>
+  <h4 class="text-center">{{ 'Contact' | uppercase }}</h4>
+  <div class="line"></div>
+  <div class="row">
+    <div class="col-sm-6 text-center">
+      <div class="address">
+        Giza Governorate, Egypt
+      </div>
+      <div class="email">
+        <i class="fa-regular fa-envelope"></i>
+        <span class="ms-2">ola.khireldin@gmail.com</span>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <form #contact="ngForm" (ngSubmit)="(contact.value)">
+        <div class="row">
+          <div class="col-sm-6">
+            <input
+              type="text"
+              placeholder="Name"
+              class="form-control mb-2"
+              name="name"
+              ngModel
+            />
+          </div>
+          <div class="col-sm-6">
+            <input
+              type="text"
+              placeholder="Phone"
+              class="form-control mb-2"
+              name="phone"
+              ngModel
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <input
+              type="email"
+              placeholder="Email address"
+              class="form-control mb-2"
+              name="email"
+              ngModel
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <textarea
+              class="form-control mb-2"
+              placeholder="Message"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-sm submit w-100">
+            {{ 'Contact Us' | uppercase }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 <!-- End contact -->

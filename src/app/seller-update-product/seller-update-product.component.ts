@@ -12,6 +12,7 @@ export class SellerUpdateProductComponent implements OnInit {
 
   productData: undefined | product
   updateProductMessage: undefined | string
+  details: string = ''
 
   constructor( private route: ActivatedRoute, private product: ProductService) { }
 

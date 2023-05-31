@@ -1,25 +1,58 @@
-body{
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--mainBgColor);
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--mainBgColor);
 }
-.invalid-input{
-    color: red;
-    font-size: 12px;
+html,
+body {
+  position: relative;
+  height: 100%;
 }
-.error-p{
-    color: red;
+app-root {
+  min-height: 100%;
+  display: block;
+  position: relative;
 }
-:root{
-    --mainBgColor:#FAF7F2;
-    --mainColor: #9F7B61;
-    --link: #8E6E35;
-    --gray: rgba(0, 0, 0, 0.55);
-    --white: #ffffff
+.invalid-input {
+  color: red;
+  font-size: 12px;
 }
-.line{
-    border: 1px solid var(--mainColor);
-    width: 8%;
-    margin: auto;
-    margin-top: 1em;
-    margin-bottom: 2em;
+.error-p {
+  color: red;
+}
+:root {
+  /* --mainBgColor:#FAF7F2; */
+  --mainBgColor: white;
+  --mainColor: #274690;
+  --link: #274690;
+  /* --gray: rgba(0, 0, 0, 0.55); */
+  --gray: #333333;
+  --white: #ffffff;
+  --gb: #f2eee8;
+  --wh: #ffffff;
+  --dark: #383a41;
+  --red: #eb6d6d;
+  --blue: #5e7fdc;
+  --break: 400px;
+}
+.line {
+  border: 1px solid var(--mainColor);
+  width: 8%;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+.action-btn {
+  background-color: var(--mainColor);
+  color: var(--white);
+  transition: transform 0.4s;
+}
+.action-btn:hover {
+  background-color: var(--mainColor);
+  color: var(--white);
+  transform: scale(1.05);
+}
+.footer {
+  position: absolute;
+  bottom: -121px;
+  width: 100%;
 }

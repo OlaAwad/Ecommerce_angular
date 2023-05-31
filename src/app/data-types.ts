@@ -9,6 +9,15 @@ export interface Login{
     password: string
 }
 
+export interface user{
+    name: string,
+    email: string,
+    mobile: string,
+    defaultAddress: string,
+    secondAddress: string,
+    id: number
+}
+
 export interface product {
     name: string,
     price: number,
@@ -18,7 +27,10 @@ export interface product {
     image: string,
     id: number,
     quantity: undefined | number,
-    productId: undefined | number
+    // productId: undefined | number,
+    details: string,
+    availableQuantity: undefined | number,
+    images?: []
 }
 export interface cart{
     name: string,
@@ -30,7 +42,9 @@ export interface cart{
     id: number | undefined,
     quantity: undefined | number,
     userId: number,
-    productId: number
+    productId: number,
+    availableQuantity: undefined | number,
+    details: string
 }
 export interface priceSummary{
     price: number,

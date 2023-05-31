@@ -25,8 +25,10 @@
       "price": "35000",
       "color": "Black",
       "category": "Mobiles",
+      "availableQuantity": "7",
       "description": "iPhone Mobile",
       "image": "https://images.unsplash.com/photo-1615494488092-b13b68fe0eb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "details": "",
       "id": 1
     },
     {
@@ -34,8 +36,10 @@
       "price": "20000",
       "color": "Gray",
       "category": "Laptops",
+      "availableQuantity": "20",
       "description": "Dell Laptop",
       "image": "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=883&q=80",
+      "details": "",
       "id": 2
     },
     {
@@ -43,8 +47,10 @@
       "price": "42000",
       "color": "Black",
       "category": "Mobiles",
+      "availableQuantity": "7",
       "description": "Samsung Mobile",
       "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
+      "details": "",
       "id": 3
     },
     {
@@ -52,8 +58,10 @@
       "price": "9000",
       "color": "Pink",
       "category": "Mobiles",
+      "availableQuantity": "15",
       "description": "Samsung Mobile",
       "image": "https://images.unsplash.com/photo-1597762470488-3877b1f538c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
+      "details": "",
       "id": 4
     },
     {
@@ -61,8 +69,10 @@
       "price": "200000",
       "color": "Gray",
       "category": "Laptops",
+      "availableQuantity": "20",
       "description": "HP Laptop",
       "image": "https://images.unsplash.com/photo-1604684768394-52a862c2955a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "details": "",
       "id": 5
     },
     {
@@ -70,8 +80,10 @@
       "price": "28000",
       "color": "Gray",
       "category": "Laptops",
+      "availableQuantity": "25",
       "description": "Dell Laptop",
       "image": "https://images.unsplash.com/photo-1593642633279-1796119d5482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80",
+      "details": "",
       "id": 6
     },
     {
@@ -79,8 +91,10 @@
       "price": "3000",
       "color": "purple",
       "category": "Shoes",
+      "availableQuantity": "15",
       "description": "Skechers",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdeLG6QwdKErXQm9BJCjybeaVcfXmuzWgJLA&usqp=CAU",
+      "details": "",
       "id": 7
     },
     {
@@ -88,23 +102,72 @@
       "price": "3000",
       "color": "Blue",
       "category": "Shoes",
+      "availableQuantity": "16",
       "description": "Skechers Shoes",
       "image": "https://images.unsplash.com/photo-1625515921520-ca6f70457641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+      "details": "",
       "id": 8
+    },
+    {
+      "name": "Nike Shoes",
+      "price": "2500",
+      "color": "Green",
+      "category": "Shoes",
+      "availableQuantity": "17",
+      "description": "Nike Shoes",
+      "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80",
+      "details": "<b>Shoes</b>",
+      "id": 9
+    },
+    {
+      "name": "Shoes",
+      "price": "5000",
+      "color": "Gray",
+      "category": "Shoes",
+      "availableQuantity": "5",
+      "description": "Gray Shoes",
+      "image": "https://images.unsplash.com/photo-1562183241-b937e95585b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=465&q=80",
+      "details": "<b> Gray Shoes </b>",
+      "id": 10
+    },
+    {
+      "name": "Sport Active Arch Fit",
+      "price": "3500",
+      "color": "Blue",
+      "category": "Shoes",
+      "availableQuantity": "15",
+      "description": "Skechers Shoes",
+      "image": "https://www.skechers.com.sg/cdn/shop/products/104164_SLT_1024x1024.jpg?v=1676459194",
+      "images[0]": "https://www.skechers.com.sg/cdn/shop/products/104164_SLT_B_1024x1024.jpg?v=1676459194",
+      "images[1]": "https://www.skechers.com.sg/cdn/shop/products/104164_SLT_D_1024x1024.jpg?v=1676459194",
+      "details": "Shoes",
+      "id": 11
     }
   ],
   "users": [
     {
-      "name": "ola awad",
+      "name": "Ola Awad",
       "email": "ola@gmail.com",
-      "password": "123456",
+      "mobile": "01140566666",
+      "defaultAddress": "Giza",
+      "secondAddress": "",
       "id": 1
     },
     {
-      "name": "ahmed",
+      "name": "ahmed ali",
       "email": "ahmed@gmail.com",
-      "password": "123456",
+      "mobile": "01140545456",
+      "defaultAddress": "Giza",
+      "secondAddress": "6th of October",
       "id": 2
+    },
+    {
+      "name": "amr awad",
+      "email": "amr@gmail.com",
+      "mobile": "012151223",
+      "defaultAddress": "Zayed",
+      "secondAddress": "October",
+      "id": 3
     }
   ],
   "cart": [
@@ -121,18 +184,6 @@
       "id": 6
     },
     {
-      "name": "Skechers Arch Fit",
-      "price": "2500",
-      "color": "brown",
-      "category": "Shoes",
-      "description": "Skechers",
-      "image": "https://www.skechers.fr/dw/image/v2/BDCN_PRD/on/demandware.static/-/Sites-skechers-master/default/dw98457640/images/large/232040_TPE.jpg?sw=800",
-      "quantity": 4,
-      "productId": 8,
-      "userId": null,
-      "id": 7
-    },
-    {
       "name": "iphone 14",
       "price": "35000",
       "color": "black",
@@ -145,16 +196,32 @@
       "id": 8
     },
     {
-      "name": "Dell Latitude E5500",
-      "price": "20000",
-      "color": "Gray",
-      "category": "Laptops",
-      "description": "Dell Laptop",
-      "image": "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=883&q=80",
+      "name": "iphone 14",
+      "price": "35000",
+      "color": "Black",
+      "category": "Mobiles",
+      "availableQuantity": "8",
+      "description": "iPhone Mobile",
+      "image": "https://images.unsplash.com/photo-1615494488092-b13b68fe0eb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "details": "",
       "quantity": 1,
-      "productId": 2,
-      "userId": 1,
+      "userId": 3,
+      "productId": 1,
       "id": 9
+    },
+    {
+      "name": "iphone 14",
+      "price": "35000",
+      "color": "Black",
+      "category": "Mobiles",
+      "availableQuantity": "7",
+      "description": "iPhone Mobile",
+      "image": "https://images.unsplash.com/photo-1615494488092-b13b68fe0eb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "details": "",
+      "quantity": 1,
+      "userId": 1,
+      "productId": 1,
+      "id": 10
     }
   ],
   "orders": [
@@ -167,28 +234,37 @@
       "id": 1
     },
     {
-      "email": "",
-      "address": "",
-      "contact": "",
-      "totalPrice": 273100,
-      "userId": 2,
-      "id": 2
-    },
-    {
-      "email": "ola.khireldin@gmail.com",
-      "address": "Elsheikh Zayed",
-      "contact": "01140541467",
-      "totalPrice": 273100,
-      "userId": 2,
-      "id": 3
-    },
-    {
       "email": "ola.khireldin@gmail.com",
       "address": "Elsheikh Zayed",
       "contact": "01140541467",
       "totalPrice": 161100,
       "userId": 1,
       "id": 5
+    },
+    {
+      "email": "ola.khireldin@gmail.com",
+      "address": "Elsheikh Zayed",
+      "contact": "01140541467",
+      "totalPrice": 83100,
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "email": "ola@gmail.com",
+      "address": "Giza",
+      "contact": "01140566666",
+      "totalPrice": 35100,
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "email": "ola@gmail.com",
+      "address": "Cairo",
+      "contact": "01140566666",
+      "totalPrice": 35100,
+      "userId": 1,
+      "id": 8
     }
-  ]
+  ],
+  "prdImages": []
 }

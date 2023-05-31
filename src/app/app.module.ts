@@ -19,6 +19,9 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { FooterComponent } from './footer/footer.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { CategoryProductsComponent } from './category-products/category-products.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { FooterComponent } from './footer/footer.component';
     CartPageComponent,
     CheckoutComponent,
     MyOrdersComponent,
-    FooterComponent
+    FooterComponent,
+    UserProfileComponent,
+    CategoryProductsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

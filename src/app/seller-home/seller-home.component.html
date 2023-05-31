@@ -10,7 +10,9 @@
                     <th>Price</th>
                     <th>Color</th>
                     <th>Category</th>
+                    <th>Quantity</th>
                     <th>Description</th>
+                    <th>Details</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -21,7 +23,9 @@
                     <td>{{prd.price}}</td>
                     <td>{{prd.color}}</td>
                     <td>{{prd.category}}</td>
+                    <td>{{prd.availableQuantity}}</td>
                     <td>{{prd.description}}</td>
+                    <td [innerHTML]="prd.details"></td>
                     <td>
                         <i class="fa-sharp fa-solid fa-trash" (click)="deleteProduct(prd.id)"></i>
                         <a routerLink="/seller-update-product/{{prd.id}}">

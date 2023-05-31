@@ -30,6 +30,13 @@
         name="category"
         ngModel="{{productData?.category}}"
       />
+      <input
+      class="form-control mb-2 w-50"
+      type="text"
+      placeholder="Enter Product Quantity"
+      name="availableQuantity"
+      ngModel="{{productData?.availableQuantity}}"
+    />
       <textarea
         class="form-control w-50 mb-2"
         placeholder="Enter Product Description"
@@ -44,7 +51,15 @@
       name="image"
       ngModel="{{productData?.image}}" 
     />
-    <button class="btn btn-primary my-3">Update Product</button>
+    <input
+      class="form-control mb-2 w-50"
+      type="text"
+      placeholder="Enter Product Details"
+      name="details"
+      ngModel="{{productData?.details}}" 
+      [innerHTML]="details"
+    />
+    <button class="btn action-btn my-3">Update Product</button>
     </form>
   </div>
   

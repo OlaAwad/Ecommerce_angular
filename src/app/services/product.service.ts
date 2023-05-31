@@ -14,6 +14,9 @@ export class ProductService {
   >([])
   searResult: Observable<product[]> = this.searchResult.asObservable()
 
+  private categoryResult: BehaviorSubject<product[]> = new BehaviorSubject<product[]>([])
+  catResult: Observable<product[]> = this.categoryResult.asObservable() 
+
   constructor(private http: HttpClient) {}
 
   addProduct(data: product) {
@@ -34,11 +37,13 @@ export class ProductService {
   }
 
   updateProduct(product: product) {
+    // console.log('aQuantity: ', product.availableQuantity)
     return this.http.put<product>(
       `http://localhost:3000/products/${product.id}`,
       product,
     )
   }
+  
 
   popularProducts() {
     return this.http.get<product[]>('http://localhost:3000/products?_limit=3')
@@ -106,7 +111,13 @@ export class ProductService {
   currentCart(){
     let userStore = localStorage.getItem('user')
     let userData = userStore && JSON.parse(userStore)
-    return this.http.get<cart[]>(`http://localhost:3000/cart?userId=${userData.id}`)
+    if(userData){
+      return this.http.get<cart[]>(`http://localhost:3000/cart?userId=${userData.id}`)
+    }else{
+      let cartData = localStorage.getItem('localCart')
+      return cartData && JSON.parse(cartData)
+    }
+    
   }
 
   orderNow(data: order){
@@ -116,7 +127,7 @@ export class ProductService {
   orderList(){
     let userStore = localStorage.getItem('user')
     let userData = userStore && JSON.parse(userStore)
-    return this.http.get<order[]>(`http://localhost:3000/orders?=${userData.id}`)
+    return this.http.get<order[]>(`http://localhost:3000/orders?userId=${userData.id}`)
   }
 
   deleteCartItem(cartId: number){
@@ -130,6 +141,18 @@ export class ProductService {
   cancelOrder(orderId: number){
     return this.http.delete(`http://localhost:3000/orders/${orderId}`)
   }
+
+  categoryProducts(query: string){
+    return this.http.get<product[]>(`http://localhost:3000/products?category=${query}`)
+  }
+
+  sendCategoryProducts(catResult: product[]){
+    this.categoryResult.next(catResult)
+  }
+
+  // postPrdImages(images: any){
+  //   return this.http.post(`http://localhost:3000/prdImages`, images)
+  // }
 
 
 

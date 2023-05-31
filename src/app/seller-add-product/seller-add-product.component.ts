@@ -10,6 +10,7 @@ import { ProductService } from '../services/product.service';
 export class SellerAddProductComponent implements OnInit {
 
   addProductMessage: string | undefined
+  details: string = ''
 
   constructor(private product: ProductService) { }
 
@@ -18,8 +19,8 @@ export class SellerAddProductComponent implements OnInit {
 
   submit(data: product){
     this.product.addProduct(data).subscribe((result) => {
-      console.log('data: ', data)
-      console.log('result: ', result)
+      // console.log('data: ', data)
+      // console.log('result: ', result)
       if(result){
         this.addProductMessage = 'Product is successfully added'
       }

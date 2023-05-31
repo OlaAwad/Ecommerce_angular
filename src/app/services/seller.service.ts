@@ -32,7 +32,7 @@ export class SellerService {
   }
 
   userLogin(data: Login) {
-    console.log(data)
+    // console.log(data)
     this.http
       .get(
         `http://localhost:3000/seller?email=${data.email}&password=${data.password}`,

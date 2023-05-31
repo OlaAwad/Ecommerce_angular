@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Login, SignUp } from '../data-types';
+import { Login, SignUp, user } from '../data-types';
+import { BehaviorSubject, Observable} from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,10 @@ import { Login, SignUp } from '../data-types';
 export class UserService {
 
   invalidUserAuth = new EventEmitter<boolean>(false)
+
+  userData = localStorage.getItem('user')
+  private userInfo: BehaviorSubject<user> = new BehaviorSubject<user>(this.userData && JSON.parse(this.userData))
+  info: Observable<user> = this.userInfo.asObservable()
 
   constructor( private http: HttpClient, private router: Router ) { }
 
@@ -41,5 +46,18 @@ export class UserService {
     if(localStorage.getItem('user')){
       this.router.navigate(['/'])
     }
+  }
+
+
+
+  updateUserInfo(data: user){
+    let user = localStorage.getItem('user')
+    let userId = user && JSON.parse(user).id
+    // console.log('userId: ', userId)
+    return this.http.put<user>(`http://localhost:3000/users/${userId}`, data)
+  }
+
+  sendUserInfo(data: user){
+    this.userInfo.next(data)
   }
 }

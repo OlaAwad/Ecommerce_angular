@@ -1,6 +1,9 @@
+/* .seller-auth{
+    height: 55.4vh;
+} */
 .auth-toggle-link{
     margin-top: 20px;
-    color: blueviolet;
+    color: var(--mainColor);
     font-size: 14px;
     text-align: left;
     cursor: pointer;

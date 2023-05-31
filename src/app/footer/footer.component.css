@@ -5,7 +5,7 @@
 }
 p{
     font-size: 0.9em;
-    color: var(--gray);
+    color: var(--white);
     cursor: pointer;
 }
 .brand{

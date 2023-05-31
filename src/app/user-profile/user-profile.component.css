@@ -1,0 +1,19 @@
+/* .user-profile{
+    height: 55.4vh;
+} */
+.nav-pills{
+    background-color: var(--mainBgColor);
+    color: var(--white);
+}
+.nav-pills .action-btn{
+    background-color: var(--white);
+    color: black;
+    transition: transform 0.4s;
+}
+.nav-pills .active{
+    background-color: var(--mainColor);
+    color: var(--white);
+    transition: transform 0.4s;
+}
+
+

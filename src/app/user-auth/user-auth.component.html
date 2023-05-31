@@ -27,7 +27,7 @@
         placeholder="Enter your password"
         ngModel
       />
-      <button class="btn btn-primary my-3">Signup</button>
+      <button class="btn action-btn my-3">Signup</button>
       <Span >
         Already have account?
         <a class="auth-toggle-link" (click)="openLogin()">Click here to Login</a>
@@ -65,7 +65,7 @@
         maxlength="20"
       />
       <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Please Enter a Valid Value</span></p>
-      <button class="btn btn-primary my-3" [disabled]="userLogin.invalid">Login</button>
+      <button class="btn action-btn my-3" [disabled]="userLogin.invalid">Login</button>
       <Span >
         Want to create account?
         <a class="auth-toggle-link" (click)="openSignup()">Click here to Signup</a>

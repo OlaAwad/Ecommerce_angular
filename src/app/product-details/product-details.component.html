@@ -19,9 +19,9 @@
             <button class="btn action-btn me-2" (click)="removeFromCart(productData.id)" *ngIf="removeCart"><b>Remove from Cart</b></button>
             <!-- <button class="btn action-btn"><b>Buy Now</b></button> -->
             <div class="quantity-group mt-3">
-                <button class="btn btn-sm " (click)="handleQuantity('min')"><b>-</b></button>
+                <button class="btn btn-sm action-btn" (click)="handleQuantity('min')"><b>-</b></button>
                 <input class="form-control d-inline mx-3" type="number" value="{{productQuantity}}" >
-                <button class="btn btn-sm " (click)="handleQuantity('plus')"><b>+</b></button>
+                <button class="btn btn-sm action-btn" (click)="handleQuantity('plus')"><b>+</b></button>
             </div>
             </div>
         </div>
