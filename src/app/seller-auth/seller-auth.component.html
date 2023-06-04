@@ -1,5 +1,5 @@
-<div class="seller-auth mt-5">
-  <div class="signup" *ngIf="!showLogin">
+<div class="seller-auth mt-5 text-center">
+  <div class="signup mb-4" *ngIf="!showLogin">
     <h4 class="mt-3 text-center">Seller Sign Up</h4>
     <form
       #sellerSignUp="ngForm"
@@ -7,37 +7,34 @@
       class="d-flex flex-column align-items-center"
     >
       <input
-        class="form-control mb-2 w-50"
+        class="form-control mb-2 w-75"
         type="text"
         placeholder="Enter your name"
         name="name"
         ngModel
       />
       <input
-        class="form-control mb-2 w-50"
+        class="form-control mb-2 w-75"
         type="password"
         placeholder="Enter your password"
         name="password"
         ngModel
       />
       <input
-        class="form-control mb-2 w-50"
+        class="form-control mb-2 w-75"
         type="text"
         placeholder="Enter your email"
         name="email"
         ngModel
       />
       <button class="btn action-btn my-3">Signup</button>
-      <Span >
-        Already have account?
-        <a class="auth-toggle-link" (click)="openLogin()">Click here to Login</a>
-      </Span>
+     
      
     </form>
   </div>
 
   <!-- Start Login -->
-  <div class="Login" *ngIf="showLogin">
+  <div class="Login mb-4" *ngIf="showLogin">
     <h4 class="mt-3 text-center">Seller Login</h4>
     <p class="error-p">{{authError}}</p>
     <form
@@ -46,14 +43,14 @@
       class="d-flex flex-column align-items-center"
     >
       <input
-        class="form-control mb-2 w-50"
+        class="form-control mb-2 w-75"
         type="text"
         placeholder="Enter your email"
         name="email"
         ngModel
       />
       <input
-        class="form-control mb-2 w-50"
+        class="form-control mb-2 w-75"
         type="password"
         placeholder="Enter your password"
         name="password"
@@ -62,12 +59,17 @@
 
       <button class="btn action-btn my-3">Login</button>
 
-      <Span>
-        Don't have account?
-        <a class="auth-toggle-link" (click)="openSignUp()">Click here to SignUp</a>
-      </Span>
+      
 
     </form>
   </div>
   <!-- End Login -->
+  <Span *ngIf="!showLogin">
+    Already have account?
+    <a class="auth-toggle-link" (click)="openLogin()">Click here to Login</a>
+  </Span>
+  <Span *ngIf="showLogin">
+    Don't have account?
+    <a class="auth-toggle-link" (click)="openSignUp()">Click here to SignUp</a>
+  </Span>
 </div>

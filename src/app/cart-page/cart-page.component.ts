@@ -10,7 +10,8 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent implements OnInit {
-  cartData: cart[] | undefined
+  // cartData: cart[] | undefined
+  cartData: any
   priceSummary: priceSummary ={
     price: 0,
     discount: 0,
@@ -68,7 +69,7 @@ export class CartPageComponent implements OnInit {
       let result = localStorage.getItem('localCart')
       this.cartData = result && JSON.parse(result)
       let price = 0;
-      this.cartData && this.cartData.forEach((item) => {
+      this.cartData && this.cartData.forEach((item: any) => {
         if(item.quantity){
           price = price + (+item.price * + item.quantity)
         }
@@ -91,6 +92,7 @@ export class CartPageComponent implements OnInit {
   }
 
   checkout(){
+    console.log('cartData: ', this.cartData)
     let user = localStorage.getItem('user')
     if(user){
       this.product.currentCart().subscribe((result: cart[])=>{
@@ -98,8 +100,11 @@ export class CartPageComponent implements OnInit {
         result.forEach((item) => {
           if(item.availableQuantity && item.quantity){
             item.availableQuantity -= item.quantity
-            console.log('itemAQ: ', item.availableQuantity)
-            this.http.put<product[]>(`http://localhost:3000/products/${item.productId}`, item)
+            // console.log('itemAQ: ', item.availableQuantity)
+            // console.log('item: ', item)
+            this.http.put<product[]>(`http://localhost:3000/products/${item.productId}`, item).subscribe(()=>{
+              
+            })
             // console.log('updated')
             // setTimeout(() => {
               // this.product.updateProduct(item)
@@ -110,6 +115,15 @@ export class CartPageComponent implements OnInit {
           }
         })
       })
+      // if(this.cartData){
+      //   this.product.saveOrderDetails(this.cartData).subscribe((result) => {
+      //     console.log(result)
+      //   })
+      // }
+      if(this.cartData){
+        this.sendCartDetails(this.cartData)
+      this.sendTotalPrice(this.priceSummary.total)
+      }
       this.router.navigate(['/checkout'])
     }else{
       this.router.navigate(['/user-auth'])
@@ -121,9 +135,52 @@ export class CartPageComponent implements OnInit {
       // console.log('result: ', result)
       this.loadDetails()
     })
-    // itemId && this.product.deleteCartItem(itemId)
-    // console.log('cartData: ', this.cartData)
-    // console.log('cartid: ', item)
+  }
+
+  sendCartDetails(data: cart[]){
+    this.product.sendCartData(data)
+  }
+
+  handleQuantity(val: string, cart: product){
+    // console.log('q: ', cart.quantity)
+     if(val === 'plus' ){
+      cart.quantity += 1
+     } else if(val === 'min'){
+      cart.quantity -= 1
+     }
+    //  console.log('q: ', cart.quantity)
+      let price = 0
+      this.cartData && this.cartData.forEach((item: any) => {
+        if(item.quantity){
+          price = price + (+item.price * + item.quantity)
+        }
+      })
+      this.priceSummary.price = price
+      this.priceSummary.discount = price/10
+      this.priceSummary.tax = price/ 10
+      this.priceSummary.delivery = 100
+      this.priceSummary.total = price + (price/10) + 100 - (price/10)
+
+      if(this.cartData){
+        this.sendCartDetails(this.cartData)
+      }
+      // let user = localStorage.getItem('user')
+      // if(user){
+      //   this.product.currentCart().subscribe((result: cart[]) => {
+      //     result.forEach((item) => {
+      //       this.http.put<product[]>
+      //     })
+      //   })
+      // }
+
+      this.sendTotalPrice(this.priceSummary.total)
+
+      console.log('total: ', this.priceSummary.price)
+      console.log('cartData: ', this.cartData)
+  }
+
+  sendTotalPrice(data: number){
+    this.product.sendTotalPrice(data)
   }
 
 }

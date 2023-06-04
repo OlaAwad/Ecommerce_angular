@@ -7,6 +7,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent} from './home/home.component'
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchComponent } from './search/search.component';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'my-orders', component:MyOrdersComponent},
   {path:'user-profile', component:UserProfileComponent, canActivate: [UserGuard]},
   {path:'category-products/:query', component: CategoryProductsComponent},
+  {path: 'orderDetails/:orderId', component: OrderDetailsComponent},
   {path:'**', pathMatch: 'full', component: NotFoundComponent}
 ];
 

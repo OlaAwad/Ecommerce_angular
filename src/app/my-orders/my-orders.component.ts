@@ -25,7 +25,7 @@ export class MyOrdersComponent implements OnInit {
 
   getOrderList(){
     this.product.orderList().subscribe((data) => {
-      console.log('data: ', data)
+      // console.log('data: ', data)
       this.orderData = data
     })
   }

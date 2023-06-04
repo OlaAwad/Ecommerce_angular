@@ -19,6 +19,15 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, private product: ProductService, private userService: UserService) {}
 
   ngOnInit(): void {
+
+    // this.userName = this.userService.userName
+
+    // this.userService.getUser().subscribe(data => {
+    //   console.log(this.http.get(`http://localhost:3000/users`))
+    //   console.log('data: ', data)
+    //   this.userName = data.name
+    // })
+    
     this.router.events.subscribe((val: any) => {
       if (val.url) {
         // console.log(val.url)
@@ -34,7 +43,9 @@ export class HeaderComponent implements OnInit {
           let userData = userStore && JSON.parse(userStore)
           // console.log('userdata: ', userData)
           // this.userName = userData.name
+
           this.userName = this.getUserName()
+
           this.menuType = 'user'
           this.product.getCartList(userData.id)
         } else {
@@ -112,4 +123,6 @@ export class HeaderComponent implements OnInit {
     })
     return this.userName
   }
+
+  
 }

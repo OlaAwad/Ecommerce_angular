@@ -1,6 +1,4 @@
-/* .user-auth{
-    height: 55.4vh;
-} */
+
 .auth-toggle-link{
     margin-top: 20px;
     color: var(--mainColor);
@@ -8,4 +6,12 @@
     text-align: left;
     cursor: pointer;
     text-decoration: none;
+}
+.user-signup, .user-login{
+    /* border: 1px solid var(--gb); */
+    width: 40%;
+    margin: auto;
+    padding: 2em;
+    box-shadow: 1px 1px 2px 2px var(--gb);
+
 }

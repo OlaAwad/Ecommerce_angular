@@ -22,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { CategoryProductsComponent } from './category-products/category-products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -41,8 +42,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FooterComponent,
     UserProfileComponent,
     CategoryProductsComponent,
-    NotFoundComponent
-  ],
+    NotFoundComponent,
+    OrderDetailsComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

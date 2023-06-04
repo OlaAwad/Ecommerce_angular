@@ -1,5 +1,5 @@
-<div class="user-auth">
-  <div class="user-signup" *ngIf="!showLogin">
+<div class="user-auth text-center">
+  <div class="user-signup mb-4" *ngIf="!showLogin">
     <h4 class="text-center">User Signup</h4>
     <form
       #userSignUp="ngForm"
@@ -8,33 +8,30 @@
     >
       <input
         type="text"
-        class="form-control w-50 mb-2"
+        class="form-control w-75 mb-2"
         name="name"
         placeholder="Enter your name"
         ngModel
       />
       <input
         type="text"
-        class="form-control w-50 mb-2"
+        class="form-control w-75 mb-2"
         name="email"
         placeholder="Enter your email"
         ngModel
       />
       <input
         type="password"
-        class="form-control w-50 mb-2"
+        class="form-control w-75 mb-2"
         name="password"
         placeholder="Enter your password"
         ngModel
       />
-      <button class="btn action-btn my-3">Signup</button>
-      <Span >
-        Already have account?
-        <a class="auth-toggle-link" (click)="openLogin()">Click here to Login</a>
-      </Span>
+      <button class="btn action-btn my-3 w-75">Signup</button>
+      
     </form>
   </div>
-  <div class="user-login" *ngIf="showLogin">
+  <div class="user-login mb-4" *ngIf="showLogin">
     <h4 class="text-center">User Login</h4>
     <form
       #userLogin="ngForm"
@@ -44,7 +41,7 @@
     <p class="error-p">{{authError}}</p>
       <input
         type="text"
-        class="form-control w-50 mb-2"
+        class="form-control w-75 mb-2"
         name="email"
         placeholder="Enter your email"
         ngModel
@@ -55,7 +52,7 @@
       <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Please Enter a Valid Value</span></p>
       <input
         type="password"
-        class="form-control w-50 mb-2"
+        class="form-control w-75 mb-2"
         name="password"
         placeholder="Enter your password"
         ngModel
@@ -65,12 +62,18 @@
         maxlength="20"
       />
       <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Please Enter a Valid Value</span></p>
-      <button class="btn action-btn my-3" [disabled]="userLogin.invalid">Login</button>
-      <Span >
-        Want to create account?
-        <a class="auth-toggle-link" (click)="openSignup()">Click here to Signup</a>
-      </Span>
+      <button class="btn action-btn w-75" [disabled]="userLogin.invalid">Login</button>
+      
     </form>
+    
   </div>
+  <Span *ngIf="!showLogin">
+    Already have account?
+    <a class="auth-toggle-link" (click)="openLogin()">Click here to Login</a>
+  </Span>
+  <Span *ngIf="showLogin">
+    Want to create account?
+    <a class="auth-toggle-link " (click)="openSignup()">Click here to Signup</a>
+  </Span>
   
 </div>

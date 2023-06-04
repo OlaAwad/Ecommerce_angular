@@ -1,0 +1,28 @@
+.cart {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  margin-bottom: 2em;
+  padding: 2em;
+  background-color: #f9f7f7;
+  color: var(--mainColor);
+}
+.cart img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  transition: transform 0.4s;
+  overflow: hidden;
+}
+.cart img:hover{
+    transform: scale(1.1);
+}
+.name,
+img {
+  cursor: pointer;
+}
+.name {
+    color: var(--mainColor); /* set the initial color of the text */
+    transition: color 1s ease; /* add a transition effect */
+}
+.name:hover {
+    color: gray; 
+}

@@ -17,6 +17,16 @@ export class ProductService {
   private categoryResult: BehaviorSubject<product[]> = new BehaviorSubject<product[]>([])
   catResult: Observable<product[]> = this.categoryResult.asObservable() 
 
+  private cartDetails: BehaviorSubject<cart[]> = new BehaviorSubject<cart[]>([])
+  cart: Observable<cart[]> = this.cartDetails.asObservable()
+
+  private orderDetails: BehaviorSubject<any> = new BehaviorSubject<any>({})
+  ordDetails: Observable<any> = this.orderDetails.asObservable()
+
+  private totalCartPrice: BehaviorSubject<number> = new BehaviorSubject<number>(0)
+  totalPrice: Observable<number> = this.totalCartPrice.asObservable()
+
+
   constructor(private http: HttpClient) {}
 
   addProduct(data: product) {
@@ -150,10 +160,30 @@ export class ProductService {
     this.categoryResult.next(catResult)
   }
 
+
   // postPrdImages(images: any){
   //   return this.http.post(`http://localhost:3000/prdImages`, images)
   // }
 
+  sendCartData(data: cart[]){
+    this.cartDetails.next(data)
+  }
+
+  // saveOrderDetails(cartData: cart[]){
+  //   return this.http.post(`http://localhost:3000/orders`, cartData)
+  // }
+
+  sendOrderDetails(details: {}){
+    this.orderDetails.next(details)
+  }
+
+  getOrderDetails(orderId: string){
+    return this.http.get(`http://localhost:3000/orders/${orderId}`)
+  }
+
+  sendTotalPrice(data: number){
+    this.totalCartPrice.next(data)
+  }
 
 
   

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { categories, product } from '../data-types';
+import { cart, categories, product } from '../data-types';
 import { ProductService } from '../services/product.service';
 import * as Aos from 'aos';
 import { Router } from '@angular/router';
@@ -15,6 +15,10 @@ export class HomeComponent implements OnInit {
   trendyProducts: undefined | product[]
   categories: undefined | categories[]
   categoryResult: undefined | product[]
+  productData: undefined | product
+  // removeCart: boolean = false
+  cartData: product | undefined
+  productQuantity: number = 1
 
 
   constructor(private product: ProductService, private router: Router) { }
@@ -49,4 +53,44 @@ export class HomeComponent implements OnInit {
     this.product.sendCategoryProducts(data)
   }
 
+  addToCart(item: product){
+    console.log('item: ', item)
+    item.quantity = this.productQuantity
+    if(!localStorage.getItem('user')){
+      this.product.localAddToCart(item)
+      // this.removeCart = true
+    } else{
+      let user = localStorage.getItem('user')
+      let userId = user && JSON.parse(user).id
+      let cartData: cart = {
+        ...item,
+        userId,
+        productId: item.id
+      }
+      delete cartData.id
+      this.product.addToCart(cartData).subscribe((result) => {
+        if(result){
+          this.product.getCartList(userId)
+          // this.removeCart = true
+        }
+      })
+    }
+  }
+
+  // removeFromCart(productId: number){
+  //   if(!localStorage.getItem('user')){
+  //     this.product.removeItemFromCart(productId)
+  //   } else{
+  //     let user = localStorage.getItem('user')
+  //     let userId = user && JSON.parse(user).id
+  //     this.cartData && this.product.removeFromCart(this.cartData.id).subscribe((result) => {
+  //       if(result){
+  //         this.product.getCartList(userId)
+  //       }
+  //     })
+  //   }
+  //   this.removeCart = false
+  // }
+
+  
 }

@@ -13,3 +13,11 @@
     text-align: center;
     color: red;
 }
+.signup, .Login{
+    /* border: 1px solid var(--gb); */
+    width: 40%;
+    margin: auto;
+    padding: 2em;
+    box-shadow: 1px 1px 2px 2px var(--gb);
+
+}

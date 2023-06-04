@@ -17,36 +17,53 @@ export class CheckoutComponent implements OnInit {
   userEmail: string = ''
   userAddress: string = ''
   userContact: string = ''
+  cartDetails: any | undefined
+  productName: string = ''
+  productImage: string = ''
+  productQuantity: number = 1
 
   constructor(private product: ProductService, private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.product.currentCart().subscribe((result: cart[]) => {
-      let price = 0;
-      this.cartData = result
-      result.forEach((item) => {
-        if(item.quantity){
-          price = price + (+item.price * + item.quantity)
-        }
-      })
-      this.totalPrice = price + (price/10) + 100 - (price/10)
-      console.log(this.totalPrice)
+    this.product.totalPrice.subscribe((result) => {
+      console.log('price: ', result)
+      this.totalPrice = result
     })
+    // this.product.currentCart().subscribe((result: cart[]) => {
+    //   let price = 0;
+    //   this.cartData = result
+    //   result.forEach((item) => {
+    //     if(item.quantity){
+    //       price = price + (+item.price * + item.quantity)
+    //     }
+    //   })
+    //   this.totalPrice = price + (price/10) + 100 - (price/10)
+    //   console.log(this.totalPrice)
+    // })
 
     this.getUserInfo()
+    this.getCartDetails()
+    // this.getTotalPrice()
   }
 
   orderNow(data: {email: string, address: string, contact: string}){
     let user = localStorage.getItem('user')
     let userId = user && JSON.parse(user).id
-    if(this.totalPrice){
+    if(this.totalPrice && this.cartDetails){
+      this.cartDetails.forEach((item: any)  => {
+        this.productName = item.name
+        this.productImage =item.image
+        this.productQuantity= item.quantity
+      });
       let orderData: order = {
         ...data,
+        ...this.cartDetails,
         totalPrice: this.totalPrice,
-        userId,
+        userId,        
         id: undefined
       }
       console.log('orderData: ', orderData)
+      this.sendOrderData(orderData)
 
       this.cartData?.forEach((item) => {
         setTimeout(()=>{
@@ -75,5 +92,26 @@ export class CheckoutComponent implements OnInit {
     })
     return this.userEmail, this.userAddress, this.userContact
   }
+
+  getCartDetails(){
+    this.product.cart.subscribe((result) => {
+      console.log('result: ', result[0].image)
+      this.cartDetails = result
+      console.log('cartDetails: ', this.cartDetails)
+    })
+  }
+
+  sendOrderData(details: {}){
+    this.product.sendOrderDetails(details)
+    //get by orderData.id
+
+  }
+
+  // getTotalPrice(){
+  //   this.product.totalPrice.subscribe((result) => {
+  //     console.log('price: ', result)
+  //     this.totalPrice = result
+  //   })
+  // }
 
 }
