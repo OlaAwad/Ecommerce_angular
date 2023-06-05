@@ -192,3 +192,6 @@
     color: var(--white);
 }
 /* End Contact */
+.btnn{
+  border: none;
+}

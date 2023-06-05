@@ -4,7 +4,6 @@
     <p class="p-message" class="text-center">{{ emptyMsg }}</p>
     <div class="row">
       <div class="col-sm-8 details">
-        <div *ngIf="cartData != undefined">
           <ul *ngFor="let cart of cartData" >
             <li>
               <img src="{{ cart.image }}" alt="" />
@@ -48,8 +47,8 @@
                 <i class="fa-solid fa-trash"></i>
               </button>
             </li>
+
           </ul>
-        </div>
           
        
       </div>

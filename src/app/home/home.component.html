@@ -49,7 +49,7 @@
             <div class="card-btn mb-2" routerLink="/details/{{ item.id }}">
               View Details
             </div>
-            <div class="card-btn" (click)="addToCart(item)">Add To Cart</div>
+            <button class="card-btn btnn" (click)="addToCart(item)" [disabled]="item.availableQuantity == 0">Add To Cart</button>
             <!-- <div class="card-btn" *ngIf="!removeCart" (click)="removeFromCart(item.id)">Remove From Cart</div> -->
           </div>
           <div class="category py-2">
