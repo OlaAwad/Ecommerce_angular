@@ -23,6 +23,7 @@ export class ProductDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log('removeCart: ', this.removeCart)
     let productId = this.activeRoute.snapshot.paramMap.get('productId')
     // console.log(productId)
     productId &&

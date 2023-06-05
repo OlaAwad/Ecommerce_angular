@@ -26,6 +26,8 @@ export class ProductService {
   private totalCartPrice: BehaviorSubject<number> = new BehaviorSubject<number>(0)
   totalPrice: Observable<number> = this.totalCartPrice.asObservable()
 
+  // private addToCartFlag = true
+
 
   constructor(private http: HttpClient) {}
 
@@ -91,7 +93,7 @@ export class ProductService {
     if (cartData) {
       let items: product[] = JSON.parse(cartData)
       items = items.filter((item: product) => productId !== item.id)
-      console.log('items: ',items)
+      // console.log('items: ',items)
       localStorage.setItem('localCart', JSON.stringify(items))
       this.cartData.emit(items)
     }
@@ -114,7 +116,7 @@ export class ProductService {
   }
 
   removeFromCart(cartId: number | undefined){
-    console.log('cartId: ', cartId)
+    // console.log('cartId: ', cartId)
     return this.http.delete(`http://localhost:3000/cart/${cartId}`)
   }
 
@@ -143,9 +145,9 @@ export class ProductService {
   deleteCartItem(cartId: number){
     return this.http.delete(`http://localhost:3000/cart/${cartId}`, {observe:'response'}).subscribe((result) => {
       if(result){
-        console.log('result: ', result)
+        // console.log('result: ', result)
         this.cartData.emit([])
-        console.log('this.cartData: ', this.cartData )
+        // console.log('this.cartData: ', this.cartData )
       }
     })
   }
@@ -186,6 +188,16 @@ export class ProductService {
   sendTotalPrice(data: number){
     this.totalCartPrice.next(data)
   }
+
+  // getFlagValue(){
+  //   return this.addToCartFlag
+  // }
+
+  // setFlagValue(value: boolean){
+  //   this.addToCartFlag = value
+  // }
+
+  
 
 
   

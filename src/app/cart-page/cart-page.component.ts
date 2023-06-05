@@ -27,9 +27,7 @@ export class CartPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('cartData: ', this.cartData)
-    this.loadDetails()
-   
+      this.loadDetails()   
   }
 
   loadDetails() {
@@ -38,20 +36,28 @@ export class CartPageComponent implements OnInit {
     if (user) {
       this.product.currentCart().subscribe((result: cart[]) => {
         // console.log(result)
-        this.cartData = result
+        // this.cartData = result
         // console.log('cartData: ', this.cartData)
+        
+this.cartData = result.reduce((acc: any, cur)=>{
+          let existingProduct = acc.find((p: any) => p.productId === cur.productId)
+          if(existingProduct){
+            existingProduct.quantity += cur.quantity
+          }else{
+            acc.push(cur)
+          }
+          return acc
+        }, [])
+
+
+        console.log('cartData: ', this.cartData)
+
         let price = 0
-        result.forEach((item) => {
-          // console.log(item, item.quantity, item.availableQuantity)
-          // if (item.quantity && item.availableQuantity) {
+        this.cartData.forEach((item: any) => {
             if(item.quantity){
             price = price + item.price * item.quantity
-            //  item.availableQuantity = item.availableQuantity - item.quantity
-            //  console.log('aq: ', item.availableQuantity)
-            //  console.log('q: ', item.quantity)
           }
         })
-        // console.log('price: ', price)
         this.priceSummary.price = price
         this.priceSummary.discount = price / 10
         this.priceSummary.tax = price / 10

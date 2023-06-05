@@ -28,6 +28,34 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/user-auth">Login/SignUp</a>
           </li>
+          <li>
+            <form
+            class="form-inline my-2 my-lg-0 d-flex searchForm"
+            *ngIf="menuType !== 'seller'"
+          >
+            <input
+              #searchInput
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              (keyup)="searchProduct($event)"
+              (blur)="hideSearch()"
+            />
+            <button
+              class="btn searchBtn btn-sm my-2 my-sm-0"
+              type="submit"
+              (click)="submitSearch(searchInput.value)"
+            >
+              Search
+            </button>
+            <ul class="suggested-result" *ngIf="searchResult">
+              <li *ngFor="let item of searchResult">
+                <a (mousedown)="redirectToDetails(item.id)">{{ item.name }}</a>
+              </li>
+            </ul>
+          </form>
+          </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/cart-page">
               Cart({{ cartItems }})
@@ -39,26 +67,59 @@
           <!-- <li class="nav-item">
             <a class="nav-link" routerLink="/seller-auth">Seller</a>
           </li> -->
-          <li class="nav-item active">
-            <a class="nav-link" routerLink="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/user-profile">
-              {{ userName | titlecase }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/my-orders">My Orders</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="userLogout()">Logout</a>
-          </li>
-          <li class="nav-item">
-            <!-- <a class="nav-link" routerLink="cartItems>0?'cart-page':null">Cart({{ cartItems }})</a> -->
-            <a routerLink="/cart-page" class="nav-link">
-              Cart({{ cartItems }})
-            </a>
-          </li>
+          <div class="left-side d-flex">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/">Home</a>
+            </li>
+            <li>
+              <form
+              class="form-inline my-2 my-lg-0 d-flex searchForm"
+              *ngIf="menuType !== 'seller'"
+            >
+              <input
+                #searchInput
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                (keyup)="searchProduct($event)"
+                (blur)="hideSearch()"
+              />
+              <button
+                class="btn searchBtn btn-sm my-2 my-sm-0"
+                type="submit"
+                (click)="submitSearch(searchInput.value)"
+              >
+                Search
+              </button>
+              <ul class="suggested-result" *ngIf="searchResult">
+                <li *ngFor="let item of searchResult">
+                  <a (mousedown)="redirectToDetails(item.id)">{{ item.name }}</a>
+                </li>
+              </ul>
+            </form>
+            </li>
+          </div>
+          <div class="right-side d-flex">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user-profile">
+                {{ userName | titlecase }}
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" routerLink="/my-orders">My Orders</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" (click)="userLogout()">Logout</a>
+            </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link" routerLink="cartItems>0?'cart-page':null">Cart({{ cartItems }})</a> -->
+              <a routerLink="/cart-page" class="nav-link">
+                Cart({{ cartItems }})
+              </a>
+            </li>
+          </div>
+          
         </ul>
 
         <ul *ngSwitchCase="'seller'" class="navbar-nav mr-auto">
@@ -76,32 +137,7 @@
           </li>
         </ul>
       </div>
-      <form
-        class="form-inline my-2 my-lg-0 d-flex searchForm"
-        *ngIf="menuType !== 'seller'"
-      >
-        <input
-          #searchInput
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-          (keyup)="searchProduct($event)"
-          (blur)="hideSearch()"
-        />
-        <button
-          class="btn searchBtn btn-sm my-2 my-sm-0"
-          type="submit"
-          (click)="submitSearch(searchInput.value)"
-        >
-          Search
-        </button>
-        <ul class="suggested-result" *ngIf="searchResult">
-          <li *ngFor="let item of searchResult">
-            <a (mousedown)="redirectToDetails(item.id)">{{ item.name }}</a>
-          </li>
-        </ul>
-      </form>
+     
     </div>
   </div>
 </nav>
