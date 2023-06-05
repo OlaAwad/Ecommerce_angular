@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { Console } from 'console'
 import { cart, Login, product, SignUp } from '../data-types'
 import { ProductService } from '../services/product.service'
 import { UserService } from '../services/user.service'
@@ -28,7 +27,7 @@ export class UserAuthComponent implements OnInit {
     // console.log(data)
     this.user.userLogin(data)
     this.user.invalidUserAuth.subscribe((result) => {
-      console.log('InvalidUserAuth: ', result)
+      // console.log('InvalidUserAuth: ', result)
       if (result) {
         this.authError = 'User not Found'
       } else {
@@ -66,7 +65,7 @@ export class UserAuthComponent implements OnInit {
         setTimeout(() => {
           this.product.addToCart(cartData).subscribe((result) => {
             if (result) {
-              console.log('item is stored in DB')
+              // console.log('item is stored in DB')
             }
           })
         }, 500)

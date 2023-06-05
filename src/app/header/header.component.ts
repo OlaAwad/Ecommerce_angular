@@ -20,13 +20,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.userName = this.userService.userName
-
-    // this.userService.getUser().subscribe(data => {
-    //   console.log(this.http.get(`http://localhost:3000/users`))
-    //   console.log('data: ', data)
-    //   this.userName = data.name
-    // })
     
     this.router.events.subscribe((val: any) => {
       if (val.url) {

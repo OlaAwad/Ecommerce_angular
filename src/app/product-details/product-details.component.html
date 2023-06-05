@@ -14,14 +14,16 @@
             </div>
             <h6><b>Category:</b> {{productData.category}}</h6>
             <h6><b>Description:</b> {{productData.description}}</h6>
+            <h6 ><b>Details:</b> <h6 [innerHTML]="productData.details" > </h6></h6>
+            <div *ngIf="lowStock" class="lowStock">{{lowStockMsg}}</div>
             <br>
             <button class="btn action-btn me-2" (click)="addToCart()" *ngIf="!removeCart"><b>Add to Cart</b></button>
             <button class="btn action-btn me-2" (click)="removeFromCart(productData.id)" *ngIf="removeCart"><b>Remove from Cart</b></button>
             <!-- <button class="btn action-btn"><b>Buy Now</b></button> -->
             <div class="quantity-group mt-3">
-                <button class="btn btn-sm action-btn" (click)="handleQuantity('min')"><b>-</b></button>
+                <button class="btn btn-sm action-btn" (click)="handleQuantity('min')" [disabled]="productQuantity === 1"><b>-</b></button>
                 <input class="form-control d-inline mx-3" type="number" value="{{productQuantity}}" >
-                <button class="btn btn-sm action-btn" (click)="handleQuantity('plus')"><b>+</b></button>
+                <button class="btn btn-sm action-btn" (click)="handleQuantity('plus')" [disabled]="productQuantity == availableQuantity"><b>+</b></button>
             </div>
             </div>
         </div>

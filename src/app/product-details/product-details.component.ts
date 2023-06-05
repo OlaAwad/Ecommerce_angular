@@ -13,6 +13,9 @@ export class ProductDetailsComponent implements OnInit {
   productQuantity: number = 1
   removeCart = false
   cartData: product | undefined
+  lowStock: boolean = false
+  lowStockMsg: string = ''
+  availableQuantity: number | undefined
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -26,7 +29,10 @@ export class ProductDetailsComponent implements OnInit {
       this.product.getProduct(productId).subscribe((result) => {
         // console.log('result', result)
         this.productData = result
-        // console.log('productData: ', this.productData)
+        console.log('Available Quantity: ', this.productData.availableQuantity)
+        this.availableQuantity = this.productData.availableQuantity
+
+        this.displayLowStockMsg()
 
         let cartData = localStorage.getItem('localCart')
         // console.log('cartData: ', cartData)
@@ -67,7 +73,8 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   handleQuantity(val: string) {
-    if (this.productQuantity < 20 && val === 'plus') {
+    let aQuantity = this.productData?.availableQuantity
+    if (aQuantity && this.productQuantity < aQuantity && val === 'plus') {
       this.productQuantity += 1
     } else if (this.productQuantity > 1 && val === 'min') {
       this.productQuantity -= 1
@@ -120,5 +127,19 @@ export class ProductDetailsComponent implements OnInit {
         })
     }
     this.removeCart = false
+  }
+
+  displayLowStockMsg(){
+    let aQuantity = this.productData?.availableQuantity
+    if(aQuantity && aQuantity == 1){
+      this.lowStock = true
+      this.lowStockMsg = `Only 1 item left in stock`
+    }else if(aQuantity && aQuantity < 5){
+      this.lowStock = true
+      this.lowStockMsg = `Only ${aQuantity} items left in stock`
+    }else{
+      this.lowStock = false
+      this.lowStockMsg = ''
+    }
   }
 }

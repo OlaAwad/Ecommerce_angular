@@ -143,7 +143,9 @@ export class ProductService {
   deleteCartItem(cartId: number){
     return this.http.delete(`http://localhost:3000/cart/${cartId}`, {observe:'response'}).subscribe((result) => {
       if(result){
+        console.log('result: ', result)
         this.cartData.emit([])
+        console.log('this.cartData: ', this.cartData )
       }
     })
   }

@@ -24,6 +24,7 @@
                 <button
                 class="btn btn-sm action-btn"
                 (click)="handleQuantity('min', cart)"
+                [disabled]="cart.quantity===1"
               >
                 <b>-</b>
               </button>
