@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { cart, order } from '../data-types';
+import { cart, order, product } from '../data-types';
 import { ProductService } from '../services/product.service';
 import { UserService } from '../services/user.service';
 
@@ -26,7 +26,7 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.product.totalPrice.subscribe((result) => {
-      console.log('price: ', result)
+      // console.log('price: ', result)
       this.totalPrice = result
     })
     // this.product.currentCart().subscribe((result: cart[]) => {
@@ -55,17 +55,20 @@ export class CheckoutComponent implements OnInit {
         this.productImage =item.image
         this.productQuantity= item.quantity
       });
-      let orderData: order = {
+      let orderData: any = {
         ...data,
-        ...this.cartDetails,
+        items:[...this.cartDetails],
         totalPrice: this.totalPrice,
         userId,        
         id: undefined
       }
-      console.log('orderData: ', orderData)
-      this.sendOrderData(orderData)
+      // console.log('orderData: ', orderData)
+      this.sendOrderData(orderData.items)
 
-      this.cartData?.forEach((item) => {
+     
+
+      this.cartDetails?.forEach((item: product) => {
+        console.log('item: ', item)
         setTimeout(()=>{
           item.id && this.product.deleteCartItem(item.id)
         }, 600)
@@ -95,9 +98,9 @@ export class CheckoutComponent implements OnInit {
 
   getCartDetails(){
     this.product.cart.subscribe((result) => {
-      console.log('result: ', result[0].image)
+      // console.log('result: ', result[0].image)
       this.cartDetails = result
-      console.log('cartDetails: ', this.cartDetails)
+      // console.log('cartDetails: ', this.cartDetails)
     })
   }
 

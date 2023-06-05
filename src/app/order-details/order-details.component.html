@@ -1,5 +1,5 @@
 <div class="container">
-    <div>TotalPrice: {{totalPrice}}</div>
+    <div class="price mb-3 text-center"><b>TotalPrice:</b> {{totalPrice}} EGP</div>
     <div class="cart row align-items-center" *ngFor="let item of orderDetails">
         <div class="col-md-3" routerLink="/details/{{ item.productId }}"> 
             <img src="{{item.image}}" class="img-fluid" alt="">    

@@ -53,13 +53,10 @@
       "price": "42000",
       "color": "Black",
       "category": "Mobiles",
-      "availableQuantity": 0,
+      "availableQuantity": "5",
       "description": "Samsung Mobile",
       "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
       "details": "",
-      "quantity": 1,
-      "userId": 1,
-      "productId": 3,
       "id": 3
     },
     {
@@ -274,20 +271,6 @@
       "userId": 1,
       "productId": 6,
       "id": 12
-    },
-    {
-      "name": "Dell Latitude E5500",
-      "price": "20000",
-      "color": "Gray",
-      "category": "Laptops",
-      "availableQuantity": 13,
-      "description": "Dell Laptop",
-      "image": "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=883&q=80",
-      "details": "",
-      "quantity": 1,
-      "userId": 1,
-      "productId": 2,
-      "id": 13
     }
   ],
   "orders": [
@@ -696,6 +679,124 @@
       "totalPrice": 183100,
       "userId": 1,
       "id": 17
+    },
+    {
+      "email": "ola@gmail.com",
+      "address": "Elsheikh Zayed",
+      "contact": "01140541467",
+      "items": [
+        {
+          "name": "Samsung Galaxy S21",
+          "price": "42000",
+          "color": "Black",
+          "category": "Mobiles",
+          "availableQuantity": 0,
+          "description": "Samsung Mobile",
+          "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
+          "details": "",
+          "quantity": 1,
+          "userId": 1,
+          "productId": 3,
+          "id": 10
+        },
+        {
+          "name": "Samsung Galaxy M31",
+          "price": "9000",
+          "color": "Pink",
+          "category": "Mobiles",
+          "availableQuantity": 13,
+          "description": "Samsung Mobile",
+          "image": "https://images.unsplash.com/photo-1597762470488-3877b1f538c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
+          "details": "",
+          "quantity": 1,
+          "userId": 1,
+          "productId": 4,
+          "id": 11
+        },
+        {
+          "name": "Dell Vostro",
+          "price": "28000",
+          "color": "Gray",
+          "category": "Laptops",
+          "availableQuantity": 17,
+          "description": "Dell Laptop",
+          "image": "https://images.unsplash.com/photo-1593642633279-1796119d5482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80",
+          "details": "",
+          "quantity": 1,
+          "userId": 1,
+          "productId": 6,
+          "id": 12
+        },
+        {
+          "name": "Dell Latitude E5500",
+          "price": "20000",
+          "color": "Gray",
+          "category": "Laptops",
+          "availableQuantity": 13,
+          "description": "Dell Laptop",
+          "image": "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=883&q=80",
+          "details": "",
+          "quantity": 1,
+          "userId": 1,
+          "productId": 2,
+          "id": 13
+        }
+      ],
+      "totalPrice": 57100,
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "email": "ola@gmail.com",
+      "address": "Elsheikh Zayed",
+      "contact": "01140541467",
+      "items": [
+        {
+          "name": "Samsung Galaxy S21",
+          "price": "42000",
+          "color": "Black",
+          "category": "Mobiles",
+          "availableQuantity": 0,
+          "description": "Samsung Mobile",
+          "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
+          "details": "",
+          "quantity": 1,
+          "userId": 1,
+          "productId": 3,
+          "id": 10
+        },
+        {
+          "name": "Samsung Galaxy M31",
+          "price": "9000",
+          "color": "Pink",
+          "category": "Mobiles",
+          "availableQuantity": 13,
+          "description": "Samsung Mobile",
+          "image": "https://images.unsplash.com/photo-1597762470488-3877b1f538c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
+          "details": "",
+          "quantity": 1,
+          "userId": 1,
+          "productId": 4,
+          "id": 11
+        },
+        {
+          "name": "Dell Vostro",
+          "price": "28000",
+          "color": "Gray",
+          "category": "Laptops",
+          "availableQuantity": 17,
+          "description": "Dell Laptop",
+          "image": "https://images.unsplash.com/photo-1593642633279-1796119d5482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80",
+          "details": "",
+          "quantity": 1,
+          "userId": 1,
+          "productId": 6,
+          "id": 12
+        }
+      ],
+      "totalPrice": 79100,
+      "userId": 1,
+      "id": 19
     }
   ],
   "prdImages": [],
