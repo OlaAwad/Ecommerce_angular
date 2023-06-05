@@ -10,7 +10,6 @@ import { ProductService } from '../services/product.service'
   styleUrls: ['./cart-page.component.css'],
 })
 export class CartPageComponent implements OnInit {
-  // cartData: cart[] | undefined
   cartData: any
   priceSummary: priceSummary = {
     price: 0,
@@ -28,8 +27,9 @@ export class CartPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log('cartData: ', this.cartData)
     this.loadDetails()
-    // console.log('cartData: ', this.cartData)
+   
   }
 
   loadDetails() {

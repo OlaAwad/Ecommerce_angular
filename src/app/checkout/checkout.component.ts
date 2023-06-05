@@ -64,6 +64,8 @@ export class CheckoutComponent implements OnInit {
       }
       // console.log('orderData: ', orderData)
       this.sendOrderData(orderData.items)
+      // this.product.localAddToCart(orderData.items)
+      localStorage.setItem('localCart', JSON.stringify([]))
 
      
 

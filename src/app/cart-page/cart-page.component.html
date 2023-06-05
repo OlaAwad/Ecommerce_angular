@@ -4,50 +4,54 @@
     <p class="p-message" class="text-center">{{ emptyMsg }}</p>
     <div class="row">
       <div class="col-sm-8 details">
-        <ul *ngFor="let cart of cartData">
-          <li>
-            <img src="{{ cart.image }}" alt="" />
-          </li>
-          <li>
-            <span>{{ cart.name }}</span>
-          </li>
-          <li>
-            <span>
-              Price:
-              <br />
-              {{ cart.price }}
-            </span>
-          </li>
-          <li>
-            <!-- <span>Quantity: <br> {{cart.quantity}}</span> -->
-            <div class="quantity-group mt-3">
+        <div *ngIf="cartData != undefined">
+          <ul *ngFor="let cart of cartData" >
+            <li>
+              <img src="{{ cart.image }}" alt="" />
+            </li>
+            <li>
+              <span>{{ cart.name }}</span>
+            </li>
+            <li>
+              <span>
+                Price:
+                <br />
+                {{ cart.price }}
+              </span>
+            </li>
+            <li>
+              <!-- <span>Quantity: <br> {{cart.quantity}}</span> -->
+              <div class="quantity-group mt-3">
+                  <button
+                  class="btn btn-sm action-btn"
+                  (click)="handleQuantity('min', cart)"
+                  [disabled]="cart.quantity===1"
+                >
+                  <b>-</b>
+                </button>
+                <input
+                  class="form-control d-inline mx-3"
+                  type="number"
+                  value="{{ cart.quantity }}"
+                />
                 <button
-                class="btn btn-sm action-btn"
-                (click)="handleQuantity('min', cart)"
-                [disabled]="cart.quantity===1"
-              >
-                <b>-</b>
+                  class="btn btn-sm action-btn"
+                  (click)="handleQuantity('plus', cart)"
+                >
+                  <b>+</b>
+                </button>
+              </div>
+              
+            </li>
+            <li>
+              <button class="btn btn-sm action-btn remove" (click)="removeFromCart(cart.id)">
+                <i class="fa-solid fa-trash"></i>
               </button>
-              <input
-                class="form-control d-inline mx-3"
-                type="number"
-                value="{{ cart.quantity }}"
-              />
-              <button
-                class="btn btn-sm action-btn"
-                (click)="handleQuantity('plus', cart)"
-              >
-                <b>+</b>
-              </button>
-            </div>
-            
-          </li>
-          <li>
-            <button class="btn btn-sm action-btn remove" (click)="removeFromCart(cart.id)">
-              <i class="fa-solid fa-trash"></i>
-            </button>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
+          
+       
       </div>
       <div class="col-sm-4 summary">
         <h4>Summary</h4>
