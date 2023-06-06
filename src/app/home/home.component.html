@@ -3,7 +3,7 @@
     <div class="picsum-img-wrapper">
       <img
         routerLink="/details/{{ item.id }}"
-        src="{{ item.image }}"
+        src="{{ item.images[0] }}"
         class="product-header-img"
         alt="Random first slide"
       />
@@ -42,7 +42,7 @@
         <div class="image-part">
           <div class="product">
             <a>
-              <img src="{{ item.image }}" alt="" />
+              <img src="{{ item.images[0] }}" alt="" />
             </a>
           </div>
           <div class="card-buttons">

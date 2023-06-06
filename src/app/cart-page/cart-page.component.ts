@@ -38,7 +38,7 @@ export class CartPageComponent implements OnInit {
       console.log('products: ', result)
       this.cartData = result.reduce((acc: any, cur: any) => {
             let existingProduct = acc.find(
-              (p: any) => p.productId === cur.productId,
+              (p: any) => p.id === cur.id,
             )
             if (existingProduct) {
               existingProduct.quantity += cur.quantity
@@ -47,6 +47,7 @@ export class CartPageComponent implements OnInit {
             }
             return acc
           }, [])
+          console.log('cartData: ', this.cartData)
       
         let price = 0
         this.cartData.forEach((item: any) => {

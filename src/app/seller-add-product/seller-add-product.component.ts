@@ -18,9 +18,17 @@ export class SellerAddProductComponent implements OnInit {
   }
 
   submit(data: product){
+    let imagesList = (data.images)?.toString()
+    if(imagesList){
+      console.log(typeof(imagesList))
+      let imagesArray = imagesList.split(', ')
+      console.log(data)
+      data.images = imagesArray.map((url: any) => url.trim())
+    }
     this.product.addProduct(data).subscribe((result) => {
       // console.log('data: ', data)
       // console.log('result: ', result)
+
       if(result){
         this.addProductMessage = 'Product is successfully added'
       }

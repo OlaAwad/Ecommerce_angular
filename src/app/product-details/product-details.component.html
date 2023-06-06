@@ -1,7 +1,15 @@
 <div class="container">
     <div class="row product-details gx-5" *ngIf="productData">
         <div class="col-sm-6">
-            <img class="product-image" src="{{productData.image}}" alt="">
+            <!-- <img class="product-image" src="{{productData.image}}" alt=""> -->
+            <ngb-carousel >
+                <ng-template *ngFor="let item of productData.images" ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img src="{{item}}" class="product-header-img">
+                  </div>                  
+                </ng-template>
+              </ngb-carousel>
+           
         </div>
         <div class=" col-sm-5">
             <div class="details">

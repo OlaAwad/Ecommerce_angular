@@ -30,6 +30,13 @@ export class SellerUpdateProductComponent implements OnInit {
     if(this.productData){
       data.id = this.productData.id
     }
+    let imagesList = (data.images)?.toString()
+    if(imagesList){
+      console.log(typeof(imagesList))
+      let imagesArray = imagesList.split(', ')
+      console.log(data)
+      data.images = imagesArray.map((url: any) => url.trim())
+    }
     this.product.updateProduct(data).subscribe((result) => {
       if(result){
         this.updateProductMessage = 'Product is successfully updated'

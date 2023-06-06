@@ -18,7 +18,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let prd of productList">
-                    <td class="w-25"><img src="{{prd.image}}" alt="product Image" class="img-fluid w-25"></td>
+                    <td class="w-25"><img src="{{prd.images[0]}}" alt="product Image" class="img-fluid w-25"></td>
                     <td>{{prd.name}}</td>
                     <td>{{prd.price}}</td>
                     <td>{{prd.color}}</td>

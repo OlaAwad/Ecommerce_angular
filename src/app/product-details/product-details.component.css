@@ -38,3 +38,7 @@ h2, h4, h5, h6{
 .btn.disabled{
     cursor: not-allowed;
 }
+ngb-carousel img{
+    height: 450px !important;
+    width: 525px;
+}

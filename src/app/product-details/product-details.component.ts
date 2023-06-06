@@ -16,19 +16,29 @@ export class ProductDetailsComponent implements OnInit {
   lowStock: boolean = false
   lowStockMsg: string = ''
   availableQuantity: number | undefined
+  popularProducts: undefined | product[]
+  images: undefined | product[]
 
   constructor(
     private activeRoute: ActivatedRoute,
     private product: ProductService,
   ) {}
 
+   
+
   ngOnInit(): void {
+
+    this.product.popularProducts().subscribe((data) => {
+      // console.log(data)
+      this.images = data;
+    })
+
     console.log('removeCart: ', this.removeCart)
     let productId = this.activeRoute.snapshot.paramMap.get('productId')
     // console.log(productId)
     productId &&
       this.product.getProduct(productId).subscribe((result) => {
-        // console.log('result', result)
+        console.log('result', result)
         this.productData = result
         console.log('Available Quantity: ', this.productData.availableQuantity)
         this.availableQuantity = this.productData.availableQuantity

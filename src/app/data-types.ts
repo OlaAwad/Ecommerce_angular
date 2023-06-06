@@ -30,7 +30,7 @@ export interface product {
     // productId: undefined | number,
     details: string,
     availableQuantity: undefined | number,
-    images?: []
+    images: string[]
 }
 export interface cart{
     name: string,

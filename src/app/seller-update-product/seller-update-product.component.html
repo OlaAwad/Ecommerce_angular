@@ -44,12 +44,19 @@
         rows="3"
         ngModel="{{productData?.description}}"
       ></textarea>
-      <input
+      <!-- <input
       class="form-control mb-2 w-50"
       type="text"
       placeholder="Enter Product Image URL"
       name="image"
       ngModel="{{productData?.image}}" 
+    /> -->
+    <input
+    class="form-control mb-2 w-50"
+      type="text"
+      name="images"
+      placeholder="Enter image URLs separated by commas"
+      ngModel="{{productData?.images}}"
     />
     <input
       class="form-control mb-2 w-50"

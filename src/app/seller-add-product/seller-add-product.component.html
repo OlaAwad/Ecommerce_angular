@@ -1,8 +1,12 @@
 <div class="container">
   <div>
     <h4 class="mt-2">Add New Product</h4>
-    <p class="msg-p">{{addProductMessage}}</p>
-    <form #addProduct="ngForm" class="d-flex flex-column align-items-center" (ngSubmit)="submit(addProduct.value)">
+    <p class="msg-p">{{ addProductMessage }}</p>
+    <form
+      #addProduct="ngForm"
+      class="d-flex flex-column align-items-center"
+      (ngSubmit)="submit(addProduct.value)"
+    >
       <input
         class="form-control mb-2 w-50"
         type="text"
@@ -32,12 +36,12 @@
         ngModel
       />
       <input
-      class="form-control mb-2 w-50"
-      type="text"
-      placeholder="Enter Product Quantity"
-      name="availableQuantity"
-      ngModel
-    />
+        class="form-control mb-2 w-50"
+        type="text"
+        placeholder="Enter Product Quantity"
+        name="availableQuantity"
+        ngModel
+      />
       <textarea
         class="form-control w-50 mb-2"
         placeholder="Enter Product Description"
@@ -45,14 +49,25 @@
         rows="3"
         ngModel
       ></textarea>
-      <input
-      class="form-control mb-2 w-50"
-      type="text"
-      placeholder="Enter Product Image URL"
-      name="image"
-      ngModel
-    />
-    <!-- <input
+      <!-- <input
+        class="form-control mb-2 w-50"
+        type="text"
+        placeholder="Enter Product Image URL"
+        name="image"
+        ngModel
+      /> -->
+      <!-- <div class="form-group"> -->
+        <input
+        class="form-control mb-2 w-50"
+          type="text"
+          name="images"
+          placeholder="Enter image URLs separated by commas"
+          ngModel
+          required
+        />
+        <!-- <small>Enter image URLs separated by commas</small> -->
+      <!-- </div> -->
+      <!-- <input
       class="form-control mb-2 w-50"
       type="text"
       placeholder="Enter Product Image URL"
@@ -66,16 +81,15 @@
       name="images[1]"
       ngModel
     /> -->
-    <input
-      class="form-control mb-2 w-50"
-      type="text"
-      placeholder="Enter Product Details"
-      name="details"
-      ngModel
-      [innerHTML]="details"
-    />
-    <button class="btn action-btn my-3">Add Product</button>
+      <input
+        class="form-control mb-2 w-50"
+        type="text"
+        placeholder="Enter Product Details"
+        name="details"
+        ngModel
+        [innerHTML]="details"
+      />
+      <button class="btn action-btn my-3">Add Product</button>
     </form>
   </div>
-  
 </div>
