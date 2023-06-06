@@ -82,6 +82,8 @@ export class ProductDetailsComponent implements OnInit {
           })
         }
       })
+
+      
   }
 
   handleQuantity(val: string) {
