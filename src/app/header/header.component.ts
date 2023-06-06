@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   sellerName: string = ''
   searchResult: undefined | product[]
   userName: string = ''
+  user$ = this.userService.getUser()
   
   cartItemsCount$ = this.product.getCartItemsCount()
   constructor(private router: Router, private product: ProductService, private userService: UserService) {}

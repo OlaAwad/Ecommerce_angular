@@ -34,12 +34,16 @@ export class UserProfileComponent implements OnInit {
   submit(data: user){
     console.log('userData: ', this.userData)
     console.log('data: ', data)
-   this.userService.updateUserInfo(data).subscribe((result) => {
-    console.log('result: ', result)   
+   this.userService.updateUserInfo(data)
+   .subscribe((result) => {
+    // console.log('result: ', result)   
     localStorage.setItem('user', JSON.stringify(result)) 
-    // this.userService.updateUserInfo(result)
+    this.userService.updateUserInfo(result)
    this.sendUserInfoToHeader(result)
+  this.userService.setUser(result)
+  
    })
+
   }
 
   sendUserInfoToHeader(data: user){
