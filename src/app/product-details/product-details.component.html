@@ -17,7 +17,8 @@
             <h6 ><b>Details:</b> <h6 [innerHTML]="productData.details" > </h6></h6>
             <div *ngIf="lowStock" class="lowStock">{{lowStockMsg}}</div>
             <br>
-            <button class="btn action-btn me-2" (click)="addToCart()" *ngIf="!removeCart"><b>Add to Cart</b></button>
+            <!-- <button class="btn action-btn me-2" (click)="addToCart()"><b>Add to Cart</b></button> -->
+            <button class="btn action-btn me-2" (click)="addToCart()" *ngIf="!removeCart" [disabled]="productData.availableQuantity ==0"><b>Add to Cart</b></button>
             <button class="btn action-btn me-2" (click)="removeFromCart(productData.id)" *ngIf="removeCart"><b>Remove from Cart</b></button>
             <!-- <button class="btn action-btn"><b>Buy Now</b></button> -->
             <div class="quantity-group mt-3">

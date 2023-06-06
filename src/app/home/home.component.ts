@@ -64,32 +64,32 @@ export class HomeComponent implements OnInit {
 
   addToCart(item: product){
     // console.log('item: ', item)
-    setTimeout(()=>{
-      this.product.currentCart().subscribe((result: any)=>{
-        // console.log(result)
-        this.cartDetails = result
-      })
-    },500)
+    // setTimeout(()=>{
+      // this.product.currentCart().subscribe((result: any)=>{
+      //   console.log(result)
+      //   this.cartDetails = result
+      // })
+    // },500)
 
     // this.checkIfItemInCart()
-    console.log('details: ', this.cartDetails)
+    // console.log('details: ', this.cartDetails)
 
-    this.cartDetails && this.cartDetails.forEach((prd: any) => {
-      if(item.id == prd.productId){
-        console.log('exists')
-        prd.quantity += item.quantity
+    // this.cartDetails && this.cartDetails.forEach((prd: any) => {
+    //   if(item.id == prd.productId){
+    //     console.log('exists')
+    //     prd.quantity += item.quantity
         
-      }else{
-      }
-    });
+    //   }else{
+    //   }
+    // });
 
     // this.product.getCartList(1)
     // console.log(this.product.getCartList(1))
     item.quantity = this.productQuantity
-    if(!localStorage.getItem('user')){
+    // if(!localStorage.getItem('user')){
       this.product.localAddToCart(item)
       // this.removeCart = true
-    } else{
+    // } else{
       let user = localStorage.getItem('user')
       let userId = user && JSON.parse(user).id
     
@@ -108,26 +108,26 @@ export class HomeComponent implements OnInit {
           // this.removeCart = true
         }
       })
-    }
+    // }
     
     
   }
   
 
-  // removeFromCart(productId: number){
-  //   if(!localStorage.getItem('user')){
-  //     this.product.removeItemFromCart(productId)
-  //   } else{
-  //     let user = localStorage.getItem('user')
-  //     let userId = user && JSON.parse(user).id
-  //     this.cartData && this.product.removeFromCart(this.cartData.id).subscribe((result) => {
-  //       if(result){
-  //         this.product.getCartList(userId)
-  //       }
-  //     })
-  //   }
+  removeFromCart(productId: number){
+    if(!localStorage.getItem('user')){
+      this.product.removeItemFromCart(productId)
+    } else{
+      let user = localStorage.getItem('user')
+      let userId = user && JSON.parse(user).id
+      this.cartData && this.product.removeFromCart(this.cartData.id).subscribe((result) => {
+        if(result){
+          this.product.getCartList(userId)
+        }
+      })
+    }
   
-  // }
+  }
 
   checkIfItemInCart(){
     let user = localStorage.getItem('user')

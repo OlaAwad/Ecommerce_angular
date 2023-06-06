@@ -56,6 +56,7 @@ export class ProductDetailsComponent implements OnInit {
         if (user) {
           let userId = user && JSON.parse(user).id
           this.product.getCartList(userId)
+
           this.product.cartData.subscribe((result) => {
             let item = result.filter(
               (item: product) =>
@@ -85,11 +86,11 @@ export class ProductDetailsComponent implements OnInit {
   addToCart() {
     if (this.productData) {
       this.productData.quantity = this.productQuantity
-      if (!localStorage.getItem('user')) {
+      // if (!localStorage.getItem('user')) {
         console.log('productData: ',this.productData)
         this.product.localAddToCart(this.productData)
         this.removeCart = true
-      } else {
+      // } else {
         // console.log('user is logged in')
         // console.log('productData: ',this.productData)
         let user = localStorage.getItem('user')
@@ -105,17 +106,19 @@ export class ProductDetailsComponent implements OnInit {
           if (result) {
             // alert('Product is added in cart')
             this.product.getCartList(userId)
+
             this.removeCart = true
           }
         })
-      }
+      // }
     }
   }
 
   removeFromCart(productId: number) {
-    if (!localStorage.getItem('user')) {
+    // if (!localStorage.getItem('user')) {
       this.product.removeItemFromCart(productId)
-    } else {
+      // this.product.removeFromCart(productId).subscribe(()=>{})
+    // } else {
       let user = localStorage.getItem('user')
       let userId = user && JSON.parse(user).id
       // console.log('cartData: ', this.cartData)
@@ -124,9 +127,10 @@ export class ProductDetailsComponent implements OnInit {
           if (result) {
             // console.log('result: ', result)
             this.product.getCartList(userId)
+
           }
         })
-    }
+    // }
     this.removeCart = false
   }
 

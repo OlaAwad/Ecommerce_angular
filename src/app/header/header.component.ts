@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { BehaviorSubject } from 'rxjs'
 import { product } from '../data-types'
 import { ProductService } from '../services/product.service'
 import { UserService } from '../services/user.service'
@@ -14,9 +15,10 @@ export class HeaderComponent implements OnInit {
   sellerName: string = ''
   searchResult: undefined | product[]
   userName: string = ''
-  cartItems = 0
-
+  
+  cartItemsCount$ = this.product.getCartItemsCount()
   constructor(private router: Router, private product: ProductService, private userService: UserService) {}
+
 
   ngOnInit(): void {
 
@@ -49,17 +51,9 @@ export class HeaderComponent implements OnInit {
       }
     })
 
-    let cartData = localStorage.getItem('localCart')
-    if (cartData) {
-      console.log('cartData: ', JSON.parse(cartData).length)
-      this.cartItems = JSON.parse(cartData).length
-    }
-
-    this.product.cartData.subscribe((items) => {
-      this.cartItems = items.length
-    })
   }
 
+  
   logout() {
     localStorage.removeItem('seller')
     this.router.navigate(['/'])
@@ -116,6 +110,7 @@ export class HeaderComponent implements OnInit {
     })
     return this.userName
   }
+
 
   
 }
