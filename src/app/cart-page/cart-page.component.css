@@ -11,6 +11,7 @@
 }
 .details img{
     height: 100px;
+    width: 100px;
 }
 .details ul{
     padding: 0;
@@ -22,6 +23,12 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 15px;
+}
+.details .prdName{
+    width: 200px;
+}
+.details .prdPrice{
+    width: 100px;
 }
 .summary{
     margin-top: 20px;
@@ -62,3 +69,4 @@
     width: 100px;
     text-align: center;
 }
+

@@ -3,19 +3,19 @@
     <h3>Cart Page</h3>
     <p class="p-message" class="text-center">{{ emptyMsg }}</p>
     <div class="row">
-      <div class="col-sm-8 details">
+      <div class="col-sm-8 details text-center">
           <ul *ngFor="let cart of cartData" >
             <li>
               <img src="{{ cart.image }}" alt="" />
             </li>
-            <li>
+            <li class="prdName">
               <span>{{ cart.name }}</span>
             </li>
-            <li>
+            <li class="prdPrice">
               <span>
                 Price:
                 <br />
-                {{ cart.price }}
+                {{ cart.price }} EGP
               </span>
             </li>
             <li>
