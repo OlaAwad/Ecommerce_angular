@@ -73,9 +73,9 @@ export class UserAuthComponent implements OnInit {
             }
           })
         }, 500)
-        if (cartDataList.length === index + 1) {
-          localStorage.removeItem('localCart')
-        }
+        // if (cartDataList.length === index + 1) {
+        //   localStorage.removeItem('localCart')
+        // }
       })
     }
     setTimeout(() => {
