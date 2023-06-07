@@ -157,7 +157,7 @@ export class ProductService {
   localRemoveFromCart(itemId: number | undefined){
     let cart = localStorage.getItem('localCart')
     let items = cart &&  JSON.parse(cart)
-    let newItems = items.filter((item: any) => item.productId !== itemId)
+    let newItems = items.filter((item: any) => item.id !== itemId)
     localStorage.setItem('localCart', JSON.stringify(newItems))
     this.updateCartCount()
   }

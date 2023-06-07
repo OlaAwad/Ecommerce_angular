@@ -1,10 +1,10 @@
 <div class="container">
     <div class="price mb-3 text-center"><b>TotalPrice:</b> {{totalPrice}} EGP</div>
     <div class="cart row align-items-center" *ngFor="let item of orderDetails">
-        <div class="col-md-3" routerLink="/details/{{ item.productId }}"> 
+        <div class="col-md-3" routerLink="/details/{{ item.id }}"> 
             <img src="{{item.images[0]}}" class="img-fluid" alt="">    
         </div>
-        <div class="col-md-3 name" routerLink="/details/{{ item.productId }}" > <b>{{item.name}}</b> </div>
+        <div class="col-md-3 name" routerLink="/details/{{ item.id }}" > <b>{{item.name}}</b> </div>
         <div class="col-md-3"> <b>Quantity: </b> {{item.quantity}} </div>
         <div class="col-md-3"> <b>Price: </b> {{item.price}} EGP </div>        
     </div>
