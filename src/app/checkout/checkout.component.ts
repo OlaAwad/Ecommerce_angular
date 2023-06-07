@@ -52,7 +52,7 @@ export class CheckoutComponent implements OnInit {
     if(this.totalPrice && this.cartDetails){
       this.cartDetails.forEach((item: any)  => {
         this.productName = item.name
-        this.productImage =item.image
+        this.productImage =item.images
         this.productQuantity= item.quantity
       });
       let orderData: any = {
