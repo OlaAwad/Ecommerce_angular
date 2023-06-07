@@ -28,6 +28,7 @@ export class CartPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadDetails()
+    console.log('cartData: ', this.cartData)
   }
 
   loadDetails() {
@@ -144,6 +145,7 @@ export class CartPageComponent implements OnInit {
       // })
       // this.product.removeFromCart(itemId).subscribe(()=>{})
       this.product.removeItemFromCart(itemId)
+      
     this.loadDetails()
     // }else{
     this.product.localRemoveFromCart(itemId)

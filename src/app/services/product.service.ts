@@ -112,8 +112,8 @@ export class ProductService {
     let cartData = localStorage.getItem('localCart')
     if (cartData) {
       let items: product[] = JSON.parse(cartData)
-      items = items.filter((item: product) => productId !== item.id)
-      // console.log('items: ',items)
+      items = items.filter((item: product) => item.id !== productId)
+      console.log('items: ',items)
       localStorage.setItem('localCart', JSON.stringify(items))
       this.cartData.emit(items)
       this.updateCartCount()
