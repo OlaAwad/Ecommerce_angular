@@ -169,6 +169,11 @@ export class CartPageComponent implements OnInit {
       cart.quantity -= 1
     }
 
+    let inCart = localStorage.getItem('localCart')
+    let cartList =inCart && JSON.parse(inCart)
+    let updatedCart = cartList.find((item: any) => item.id === cart.id)
+    updatedCart.quantity = cart.quantity
+    localStorage.setItem('localCart', JSON.stringify(cartList))
     let price = 0
     this.cartData &&
       this.cartData.forEach((item: any) => {
