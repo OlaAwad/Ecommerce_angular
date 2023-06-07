@@ -51,6 +51,7 @@ export class UserAuthComponent implements OnInit {
 
   localCartToRemoteCart() {
     let data = localStorage.getItem('localCart')
+    console.log('data: ',data && JSON.parse(data))
     let user = localStorage.getItem('user')
     let userId = user && JSON.parse(user).id
     // console.log( 'user: ', user)

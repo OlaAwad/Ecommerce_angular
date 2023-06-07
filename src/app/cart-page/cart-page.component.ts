@@ -116,7 +116,7 @@ export class CartPageComponent implements OnInit {
         item.availableQuantity -= item.quantity
         this.http
           .put<product[]>(
-            `http://localhost:3000/products/${item.productId}`,
+            `http://localhost:3000/products/${item.id}`,
             item,
           )
           .subscribe(() => {})
@@ -125,7 +125,7 @@ export class CartPageComponent implements OnInit {
       if (this.cartData) {
         this.sendCartDetails(this.cartData)
         this.sendTotalPrice(this.priceSummary.total)
-        this.product.localAddToCart(this.cartData)
+        // this.product.localAddToCart(this.cartData)
       }
       this.router.navigate(['/checkout'])
     } else {
@@ -192,7 +192,7 @@ export class CartPageComponent implements OnInit {
       this.cartData.forEach((item: any) => {
         this.http
           .put<product[]>(
-            `http://localhost:3000/products/${item.productId}`,
+            `http://localhost:3000/products/${item.id}`,
             item,
           )
           .subscribe((res) => {

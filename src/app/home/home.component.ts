@@ -71,7 +71,6 @@ export class HomeComponent implements OnInit {
       // })
     // },500)
 
-    // this.checkIfItemInCart()
     // console.log('details: ', this.cartDetails)
 
     // this.cartDetails && this.cartDetails.forEach((prd: any) => {
@@ -129,17 +128,7 @@ export class HomeComponent implements OnInit {
   
   }
 
-  checkIfItemInCart(){
-    let user = localStorage.getItem('user')
-    let userId = user && JSON.parse(user).id
-    return this.http.get<product[]>(`http://localhost:3000/cart?userId=${userId}`, {observe: 'response'}).subscribe((result)=>{
-      if(result && result.body){
-        // console.log('cartDetails: ', result.body)
-        this.cartDetails = result.body
-      }
-      
-    })
-  }
+
 
 
 
