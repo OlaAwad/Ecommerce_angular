@@ -175,6 +175,7 @@ export class ProductService {
   }
 
   orderNow(data: order){
+    this.updateCartCount()
     return this.http.post(`http://localhost:3000/orders`, data)
   }
 
