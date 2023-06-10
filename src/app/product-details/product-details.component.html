@@ -2,14 +2,30 @@
     <div class="row product-details gx-5" *ngIf="productData">
         <div class="col-sm-6">
             <!-- <img class="product-image" src="{{productData.image}}" alt=""> -->
-            <ngb-carousel >
-                <ng-template *ngFor="let item of productData.images" ngbSlide>
-                  <div class="picsum-img-wrapper">
-                    <img src="{{item}}" class="product-header-img">
-                  </div>                  
-                </ng-template>
-              </ngb-carousel>
+            <div class="carousel-container">
+                <ngb-carousel >
+                    <ng-template *ngFor="let item of productData.images" ngbSlide>
+                      <!-- <div class="picsum-img-wrapper" class="image-container" (mouseover)="imageZoom('img-original', 'img-zoom')">
+                            <img src="{{item}}" id="img-original" class="product-header-img" alt="Product Image" ngxZoom >
+                            <div id="img-zoom" class="img-zoom-result"></div>
+                      </div>                   -->
+                      <!-- <div class="picsum-img-wrapper" class="image-container" >
+                        <img src="{{item}}" id="img-original" class="product-header-img" alt="Product Image" ngxZoom (mouseover)="imageZoom('img-original', 'img-zoom')">
+                      </div> -->
+                      <!-- <div class="img-container">
+                        <img src="{{item}}" alt="Image" id="myImage" (load)="onImageLoad()">
+                        <div class="img-zoom-result" id="myResult"></div>
+                      </div> -->
+                      <div class="image-container">
+                        <img src="{{item}}" alt="Product Image" id="myImage" (load)="onImageLoad()">
+                        <div class="img-zoom-result" id="myResult"></div>
+                      </div>
+                    </ng-template>
+                  </ngb-carousel>
+            </div>
            
+            
+    
               
         </div>
         <div class=" col-sm-5">

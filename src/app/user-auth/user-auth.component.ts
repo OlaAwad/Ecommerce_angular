@@ -39,6 +39,9 @@ export class UserAuthComponent implements OnInit {
     // let usr = localStorage.getItem('user')
     // let user = usr && JSON.parse(usr)
     // this.user.setUser(user)
+    setTimeout(()=>{
+      this.product.updateCartCount()
+    }, 500)
   }
 
   openSignup() {

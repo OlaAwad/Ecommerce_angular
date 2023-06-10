@@ -52,6 +52,7 @@ export class HeaderComponent implements OnInit {
       }
     })
 
+    this.product.updateCartCount()
   }
 
   

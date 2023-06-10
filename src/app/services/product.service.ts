@@ -123,13 +123,14 @@ export class ProductService {
   addToCart(cartData: any) {
     this.getCartDetails()
     this.cartData.emit(cartData)
-    this.updateCartCount()
+    // this.updateCartCount()
     return this.http.post('http://localhost:3000/cart', cartData)
     
   }
 
   getCartList(userId: number) {
     // console.log('userId: ', userId)
+    return this.http.get<product[]>(`http:localhost:3000/cart?userId=${userId}`)
    
     // return this.http
     //   .get<product[]>(`http://localhost:3000/cart?userId=${userId}`, {observe: 'response'}).subscribe((result) => {
@@ -150,8 +151,9 @@ export class ProductService {
 
   removeFromCart(cartId: number | undefined){
     // console.log('cartId: ', cartId)
-    this.updateCartCount()
+    // this.updateCartCount()
     return this.http.delete(`http://localhost:3000/cart/${cartId}`)
+    // return this.http.delete(`http://localhost:3000/cart?productId=${productId}`)
   }
 
   localRemoveFromCart(itemId: number | undefined){
@@ -163,14 +165,14 @@ export class ProductService {
   }
 
   currentCart(){
-    // let userStore = localStorage.getItem('user')
-    // let userData = userStore && JSON.parse(userStore)
-    // if(userData){
-    //   return this.http.get<cart[]>(`http://localhost:3000/cart?userId=${userData.id}`)
-    // }else{
+    let userStore = localStorage.getItem('user')
+    let userData = userStore && JSON.parse(userStore)
+    if(userData){
+      return this.http.get<cart[]>(`http://localhost:3000/cart?userId=${userData.id}`)
+    }else{
       let cartData = localStorage.getItem('localCart')
       return cartData && JSON.parse(cartData)
-    // }
+    }
     
   }
 
@@ -208,13 +210,12 @@ export class ProductService {
   }
 
 
-  // postPrdImages(images: any){
-  //   return this.http.post(`http://localhost:3000/prdImages`, images)
-  // }
 
   sendCartData(data: cart[]){
     this.cartDetails.next(data)
   }
+
+
 
   // saveOrderDetails(cartData: cart[]){
   //   return this.http.post(`http://localhost:3000/orders`, cartData)
@@ -235,11 +236,24 @@ export class ProductService {
  
 
   updateCartCount(){
-    let localCart = localStorage.getItem('localCart')
-    let cartData = localCart && JSON.parse(localCart)
-    console.log('cartDataLength: ', cartData.length)
-    let cartItems = cartData? cartData.length : 0
-    this.cartItems$.next(cartItems)
+    let user = localStorage.getItem('user')
+    let userId = user && JSON.parse(user).id
+    if(!user){
+      let localCart = localStorage.getItem('localCart')
+      let cartData = localCart && JSON.parse(localCart)
+      console.log('cartDataLength: ', cartData.length)
+      let cartItems = cartData? cartData.length : 0
+      this.cartItems$.next(cartItems)
+    }else{
+      this.http.get<cart[]>(`http://localhost:3000/cart?userId=${userId}`).subscribe((result)=>{
+        console.log(typeof(result))
+        console.log(result)
+        let cartItems = result? result.length : 0
+        this.cartItems$.next(cartItems)
+      })
+    }
+    
+   
   }
 
   getCartItemsCount(){
