@@ -81,6 +81,7 @@ export class CheckoutComponent implements OnInit {
           // alert('Order Placed')
           this.orderMsg = 'Your order has been placed'
           setTimeout(() => {
+          this.product.updateCartCount()
             this.router.navigate(['/my-orders'])
             this.orderMsg = undefined
           }, 4000)

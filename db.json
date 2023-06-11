@@ -21,16 +21,19 @@
   ],
   "products": [
     {
-      "name": "iphone 14",
-      "price": "35000",
+      "name": "Samsung Galaxy S21",
+      "price": "42000",
       "color": "Black",
       "category": "Mobiles",
-      "availableQuantity": "3",
-      "description": "iPhone Mobile",
+      "availableQuantity": 4,
+      "description": "Samsung Mobile",
       "images": [
-        "https://images.unsplash.com/photo-1615494488092-b13b68fe0eb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+        "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
       ],
       "details": "<h5>Mobile</h5>",
+      "quantity": 1,
+      "userId": 1,
+      "productId": 3,
       "id": 1
     },
     {
@@ -99,16 +102,19 @@
       "id": 6
     },
     {
-      "name": "Skechers Slip-ins",
+      "name": "Skechers Shoes",
       "price": "3000",
-      "color": "purple",
+      "color": "Blue",
       "category": "Shoes",
-      "availableQuantity": "3",
-      "description": "Skechers",
+      "availableQuantity": 8,
+      "description": "Skechers Shoes",
       "images": [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdeLG6QwdKErXQm9BJCjybeaVcfXmuzWgJLA&usqp=CAU"
+        "https://images.unsplash.com/photo-1625515921520-ca6f70457641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80"
       ],
       "details": "",
+      "quantity": 1,
+      "userId": 1,
+      "productId": 8,
       "id": 7
     },
     {
@@ -179,100 +185,36 @@
   ],
   "cart": [
     {
-      "name": "Samsung Galaxy S21",
-      "price": "42000",
-      "color": "Black",
-      "category": "Mobiles",
-      "availableQuantity": "5",
-      "description": "Samsung Mobile",
+      "name": "Dell Latitude E5500",
+      "price": "20000",
+      "color": "Gray",
+      "category": "Laptops",
+      "availableQuantity": "3",
+      "description": "Dell Laptop",
       "images": [
-        "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
+        "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=883&q=80"
       ],
-      "details": "<h5>Mobile</h5>",
+      "details": "",
       "quantity": 1,
       "userId": 1,
-      "productId": 3,
+      "productId": 2,
       "id": 1
     },
     {
-      "name": "Samsung Galaxy M31",
-      "price": "9000",
-      "color": "Pink",
-      "category": "Mobiles",
-      "availableQuantity": "5",
-      "description": "Samsung Mobile",
+      "name": "Dell Latitude E5500",
+      "price": "20000",
+      "color": "Gray",
+      "category": "Laptops",
+      "availableQuantity": "3",
+      "description": "Dell Laptop",
       "images": [
-        "https://images.unsplash.com/photo-1597762470488-3877b1f538c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80"
+        "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=883&q=80"
       ],
       "details": "",
       "quantity": 1,
       "userId": null,
-      "productId": 4,
+      "productId": 2,
       "id": 2
-    },
-    {
-      "name": "Samsung Galaxy M31",
-      "price": "9000",
-      "color": "Pink",
-      "category": "Mobiles",
-      "availableQuantity": "5",
-      "description": "Samsung Mobile",
-      "images": [
-        "https://images.unsplash.com/photo-1597762470488-3877b1f538c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80"
-      ],
-      "details": "",
-      "quantity": 1,
-      "userId": null,
-      "productId": 4,
-      "id": 3
-    },
-    {
-      "name": "iphone 14",
-      "price": "35000",
-      "color": "Black",
-      "category": "Mobiles",
-      "availableQuantity": "3",
-      "description": "iPhone Mobile",
-      "images": [
-        "https://images.unsplash.com/photo-1615494488092-b13b68fe0eb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-      ],
-      "details": "<h5>Mobile</h5>",
-      "quantity": 1,
-      "userId": null,
-      "productId": 1,
-      "id": 4
-    },
-    {
-      "name": "iphone 14",
-      "price": "35000",
-      "color": "Black",
-      "category": "Mobiles",
-      "availableQuantity": "3",
-      "description": "iPhone Mobile",
-      "images": [
-        "https://images.unsplash.com/photo-1615494488092-b13b68fe0eb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-      ],
-      "details": "<h5>Mobile</h5>",
-      "quantity": 1,
-      "userId": null,
-      "productId": 1,
-      "id": 5
-    },
-    {
-      "name": "iphone 14",
-      "price": "35000",
-      "color": "Black",
-      "category": "Mobiles",
-      "availableQuantity": "3",
-      "description": "iPhone Mobile",
-      "images": [
-        "https://images.unsplash.com/photo-1615494488092-b13b68fe0eb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-      ],
-      "details": "<h5>Mobile</h5>",
-      "quantity": 1,
-      "userId": null,
-      "productId": 1,
-      "id": 6
     }
   ],
   "orders": [
@@ -1869,6 +1811,110 @@
       "totalPrice": 86100,
       "userId": 1,
       "id": 46
+    },
+    {
+      "email": "ahmed@gmail.com",
+      "address": "Giza",
+      "contact": "01140545456",
+      "items": [
+        {
+          "name": "Dell Latitude E5500",
+          "price": "20000",
+          "color": "Gray",
+          "category": "Laptops",
+          "availableQuantity": 2,
+          "description": "Dell Laptop",
+          "images": [
+            "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=883&q=80"
+          ],
+          "details": "",
+          "quantity": 1,
+          "userId": 2,
+          "productId": 2,
+          "id": 7
+        }
+      ],
+      "totalPrice": 20100,
+      "userId": 2,
+      "id": 47
+    },
+    {
+      "email": "ahmed@gmail.com",
+      "address": "Giza",
+      "contact": "01140545456",
+      "items": [
+        {
+          "name": "Samsung Galaxy S21",
+          "price": "42000",
+          "color": "Black",
+          "category": "Mobiles",
+          "availableQuantity": 4,
+          "description": "Samsung Mobile",
+          "images": [
+            "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
+          ],
+          "details": "<h5>Mobile</h5>",
+          "quantity": 1,
+          "userId": 1,
+          "productId": 3,
+          "id": 1
+        }
+      ],
+      "totalPrice": 42100,
+      "userId": 1,
+      "id": 48
+    },
+    {
+      "email": "ola@gmail.com",
+      "address": "Elsheikh Zayed",
+      "contact": "01140541467",
+      "items": [
+        {
+          "name": "Samsung Galaxy S21",
+          "price": "42000",
+          "color": "Black",
+          "category": "Mobiles",
+          "availableQuantity": 3,
+          "description": "Samsung Mobile",
+          "images": [
+            "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
+          ],
+          "details": "<h5>Mobile</h5>",
+          "quantity": 1,
+          "userId": 1,
+          "productId": 1,
+          "id": 7
+        }
+      ],
+      "totalPrice": 42100,
+      "userId": 1,
+      "id": 49
+    },
+    {
+      "email": "ola@gmail.com",
+      "address": "Elsheikh Zayed",
+      "contact": "01140541467",
+      "items": [
+        {
+          "name": "Skechers Shoes",
+          "price": "3000",
+          "color": "Blue",
+          "category": "Shoes",
+          "availableQuantity": 8,
+          "description": "Skechers Shoes",
+          "images": [
+            "https://images.unsplash.com/photo-1625515921520-ca6f70457641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80"
+          ],
+          "details": "",
+          "quantity": 1,
+          "userId": 1,
+          "productId": 8,
+          "id": 7
+        }
+      ],
+      "totalPrice": 3100,
+      "userId": 1,
+      "id": 50
     }
   ],
   "prdImages": [],

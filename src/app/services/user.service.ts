@@ -74,7 +74,9 @@ export class UserService {
 
   setUser(user: any){
     localStorage.setItem('user', JSON.stringify(user))
+    setTimeout(() => {
     this.updateUser()
+    }, 500);
   }
 
   getUser(){
