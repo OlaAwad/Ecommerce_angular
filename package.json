@@ -26,6 +26,7 @@
     "bootstrap": "^5.2.3",
     "jquery": "^3.7.0",
     "ng-carousel": "^0.2.0",
+    "ngx-image-zoom": "^2.1.0",
     "ngx-owl-carousel-o": "^16.0.0",
     "ngx-slick-carousel": "^15.0.0",
     "rxjs": "~7.5.0",

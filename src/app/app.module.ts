@@ -23,6 +23,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { CategoryProductsComponent } from './category-products/category-products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
+import { ImageZoomDialogComponent } from './image-zoom-dialog/image-zoom-dialog.component';
 
 @NgModule({
   declarations: [
@@ -43,14 +44,14 @@ import { OrderDetailsComponent } from './order-details/order-details.component';
     UserProfileComponent,
     CategoryProductsComponent,
     NotFoundComponent,
-    OrderDetailsComponent  ],
+    OrderDetailsComponent,
+    ImageZoomDialogComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule,
-    
+    NgbModule
     ],
   providers: [],
   bootstrap: [AppComponent]

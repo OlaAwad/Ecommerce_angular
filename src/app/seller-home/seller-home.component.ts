@@ -23,7 +23,10 @@ export class SellerHomeComponent implements OnInit {
     this.product.deleteProduct(id).subscribe((result) => {
       if(result){
         this.deleteProductMessage = 'Product is deleted'
+        setTimeout(()=>{
         this.getProductList()
+        
+        }, 3000)
       }
     })
     setTimeout(() => {

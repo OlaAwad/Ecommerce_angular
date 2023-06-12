@@ -1,58 +1,95 @@
 <div class="container">
-    <div class="row product-details gx-5" *ngIf="productData">
-        <div class="col-sm-6">
-            <!-- <img class="product-image" src="{{productData.image}}" alt=""> -->
-            <div class="carousel-container">
-                <ngb-carousel >
-                    <ng-template *ngFor="let item of productData.images" ngbSlide>
-                      <!-- <div class="picsum-img-wrapper" class="image-container" (mouseover)="imageZoom('img-original', 'img-zoom')">
-                            <img src="{{item}}" id="img-original" class="product-header-img" alt="Product Image" ngxZoom >
-                            <div id="img-zoom" class="img-zoom-result"></div>
-                      </div>                   -->
-                      <!-- <div class="picsum-img-wrapper" class="image-container" >
-                        <img src="{{item}}" id="img-original" class="product-header-img" alt="Product Image" ngxZoom (mouseover)="imageZoom('img-original', 'img-zoom')">
-                      </div> -->
-                      <!-- <div class="img-container">
-                        <img src="{{item}}" alt="Image" id="myImage" (load)="onImageLoad()">
-                        <div class="img-zoom-result" id="myResult"></div>
-                      </div> -->
-                      <div class="image-container">
-                        <img src="{{item}}" alt="Product Image" id="myImage" (load)="onImageLoad()">
-                        <div class="img-zoom-result" id="myResult"></div>
-                      </div>
-                    </ng-template>
-                  </ngb-carousel>
+  <div class="row product-details gx-5" *ngIf="productData">
+    <div class="col-sm-6">
+      <!-- <img class="product-image" src="{{productData.image}}" alt=""> -->
+      <div class="carousel-container">
+        <ngb-carousel>
+          <ng-template *ngFor="let item of productData.images" ngbSlide>
+            <div class="image-container">
+              <!-- <img
+                src="{{ item }}"
+                alt="Product Image"
+                id="myImage"
+              /> -->
+              <img
+                src="{{ item }}"
+                alt="Product Image"
+                id="myImage"
+                (click)="openZoomDialog(item)"
+              />
+              <div class="img-zoom-result" id="myResult"></div>
             </div>
-           
-            
-    
-              
-        </div>
-        <div class=" col-sm-5">
-            <div class="details">
-            <h2>{{productData.name}}</h2>
-            <h4>Price: {{productData.price}}</h4>
-            <div>
-                <b>Color: </b>
-                <h5 [style.backgroundColor]="productData.color" class="product-color">
-                </h5>
-            </div>
-            <h6><b>Category:</b> {{productData.category}}</h6>
-            <h6><b>Description:</b> {{productData.description}}</h6>
-            <h6 ><b>Details:</b> <h6 [innerHTML]="productData.details" > </h6></h6>
-            <div *ngIf="lowStock" class="lowStock">{{lowStockMsg}}</div>
-            <br>
-            <!-- <button class="btn action-btn me-2" (click)="addToCart()"><b>Add to Cart</b></button> -->
-            <button class="btn action-btn me-2" (click)="addToCart()" *ngIf="!removeCart" [disabled]="productData.availableQuantity ==0"><b>Add to Cart</b></button>
-            <button class="btn action-btn me-2" (click)="removeFromCart(productData.id)" *ngIf="removeCart"><b>Remove from Cart</b></button>
-            <!-- <button class="btn action-btn"><b>Buy Now</b></button> -->
-            <div class="quantity-group mt-3">
-                <button class="btn btn-sm action-btn" (click)="handleQuantity('min')" [disabled]="productQuantity === 1"><b>-</b></button>
-                <input class="form-control d-inline mx-3" type="number" value="{{productQuantity}}" >
-                <button class="btn btn-sm action-btn" (click)="handleQuantity('plus')" [disabled]="productQuantity == availableQuantity || availableQuantity ==0"><b>+</b></button>
-            </div>
-            </div>
-        </div>
-
+          </ng-template>
+        </ngb-carousel>
+      </div>
+     
     </div>
+    <div class="col-sm-5">
+      <div class="details">
+        <h2>{{ productData.name }}</h2>
+        <h4>Price: {{ productData.price }}</h4>
+        <div>
+          <b>Color:</b>
+          <h5
+            [style.backgroundColor]="productData.color"
+            class="product-color"
+          ></h5>
+        </div>
+        <h6>
+          <b>Category:</b>
+          {{ productData.category }}
+        </h6>
+        <h6>
+          <b>Description:</b>
+          {{ productData.description }}
+        </h6>
+        <h6>
+          <b>Details:</b>
+          <h6 [innerHTML]="productData.details"></h6>
+        </h6>
+        <div *ngIf="lowStock" class="lowStock">{{ lowStockMsg }}</div>
+        <br />
+        <!-- <button class="btn action-btn me-2" (click)="addToCart()"><b>Add to Cart</b></button> -->
+        <button
+          class="btn action-btn me-2"
+          (click)="addToCart()"
+          *ngIf="!removeCart"
+          [disabled]="productData.availableQuantity == 0"
+        >
+          <b>Add to Cart</b>
+        </button>
+        <button
+          class="btn action-btn me-2"
+          (click)="removeFromCart(productData.id)"
+          *ngIf="removeCart"
+        >
+          <b>Remove from Cart</b>
+        </button>
+        <!-- <button class="btn action-btn"><b>Buy Now</b></button> -->
+        <div class="quantity-group mt-3">
+          <button
+            class="btn btn-sm action-btn"
+            (click)="handleQuantity('min')"
+            [disabled]="productQuantity === 1"
+          >
+            <b>-</b>
+          </button>
+          <input
+            class="form-control d-inline mx-3"
+            type="number"
+            value="{{ productQuantity }}"
+          />
+          <button
+            class="btn btn-sm action-btn"
+            (click)="handleQuantity('plus')"
+            [disabled]="
+              productQuantity == availableQuantity || availableQuantity == 0
+            "
+          >
+            <b>+</b>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

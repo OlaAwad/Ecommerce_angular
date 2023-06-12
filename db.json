@@ -37,32 +37,6 @@
       "id": 1
     },
     {
-      "name": "Dell Latitude E5500",
-      "price": "20000",
-      "color": "Gray",
-      "category": "Laptops",
-      "availableQuantity": "3",
-      "description": "Dell Laptop",
-      "images": [
-        "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=883&q=80"
-      ],
-      "details": "",
-      "id": 2
-    },
-    {
-      "name": "Samsung Galaxy S21",
-      "price": "42000",
-      "color": "Black",
-      "category": "Mobiles",
-      "availableQuantity": "5",
-      "description": "Samsung Mobile",
-      "images": [
-        "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
-      ],
-      "details": "<h5>Mobile</h5>",
-      "id": 3
-    },
-    {
       "name": "Samsung Galaxy M31",
       "price": "9000",
       "color": "Pink",
@@ -118,32 +92,6 @@
       "id": 7
     },
     {
-      "name": "Skechers Shoes",
-      "price": "3000",
-      "color": "Blue",
-      "category": "Shoes",
-      "availableQuantity": "9",
-      "description": "Skechers Shoes",
-      "images": [
-        "https://images.unsplash.com/photo-1625515921520-ca6f70457641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80"
-      ],
-      "details": "",
-      "id": 8
-    },
-    {
-      "name": "Nike Shoes",
-      "price": "2500",
-      "color": "Green",
-      "category": "Shoes",
-      "availableQuantity": "17",
-      "description": "Nike Shoes",
-      "images": [
-        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80"
-      ],
-      "details": "<b>Shoes</b>",
-      "id": 9
-    },
-    {
       "name": "Shoes",
       "price": "5000",
       "color": "Gray",
@@ -155,6 +103,19 @@
       ],
       "details": "<b> Gray Shoes </b>",
       "id": 10
+    },
+    {
+      "name": "Dell Latitude E5500",
+      "price": "20000",
+      "color": "Gray",
+      "category": "Mobiles",
+      "availableQuantity": "7",
+      "description": "Dell Laptop",
+      "images": [
+        "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=883&q=80"
+      ],
+      "details": "",
+      "id": 11
     }
   ],
   "users": [
